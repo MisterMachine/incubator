@@ -1,0 +1,6 @@
+/Config/core.php
+/Config/database.php
+/Plugin
+/tmp
+.DS_Store
+tags
