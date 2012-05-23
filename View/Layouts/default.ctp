@@ -54,13 +54,12 @@
 		<header>
 			<div class="hgroup container_12">
 				<div class="logo grid_4">
-					<strong><?php echo __('Conveyor'); ?></strong>
+					<strong><?php echo __('Incubator'); ?></strong>
 				</div>
 				<nav class="grid_8">
 					<!-- main menu -->
 					<ul>
-						<li><?php echo $this->Html->link(__('Pods'), array('controller' => 'pods', 'action' => 'index')); ?></li>
-						<li><?php echo $this->Html->link(__('Groups'), array('controller' => 'groups', 'action' => 'index')); ?></li>
+						<li><?php echo $this->Html->link(__('Inventory'), array('controller' => 'seeds', 'action' => 'index')); ?></li>
 					</ul>
 				</nav>
 			</div>

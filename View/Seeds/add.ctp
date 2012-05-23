@@ -1,0 +1,14 @@
+<section class="single clearfix">
+<?php echo $this->Form->create('Seed');?>
+	<fieldset>
+		<legend><?php echo __('Add Seed'); ?></legend>
+	<?php
+		echo $this->Form->input('name');
+		echo $this->Form->input('content');
+		echo $this->Form->input('technology');
+		echo $this->Form->input('url');
+		echo $this->Form->input('repository');
+	?>
+	</fieldset>
+<?php echo $this->Form->end(__('Submit'));?>
+</section>
