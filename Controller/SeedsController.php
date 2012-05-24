@@ -78,4 +78,22 @@ class SeedsController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 
+	public function step_one() {
+		if ($this->request->is('post')) {
+			$this->Seed->create();
+			$user_id = $this->Auth->user('id');
+			if(isset($user_id)) {
+				$this->request->data['Seed']['user_id'] = $user_id;
+				if ($this->Seed->save($this->request->data)) {
+					$this->Session->setFlash(__('The seed has been saved'));
+					$this->redirect(array('action' => 'index'));
+				} else {
+					$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
+				}
+			} else {
+				$this->Session->setFlash(__('The seed could not be associated with a user. Please, try again.'));
+			}
+		}
+	}
+
 }
