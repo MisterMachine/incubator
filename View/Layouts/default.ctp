@@ -60,7 +60,8 @@
 					<!-- main menu -->
 					<ul>
 						<li><?php echo $this->Html->link(__('Inventory'), array('controller' => 'seeds', 'action' => 'index')); ?></li>
-						<li><?php echo $this->Html->link(__('Seed'), array('controller' => 'seeds', 'action' => 'step_one')); ?></li>
+						<li><?php echo $this->Html->link(__('Plant a Seed'), array('controller' => 'seeds', 'action' => 'step_one')); ?></li>
+						<li><?php echo $this->Html->link(__('Make a clipping'), array('controller' => 'seeds', 'action' => 'step_one')); ?></li>
 					</ul>
 				</nav>
 			</div>
