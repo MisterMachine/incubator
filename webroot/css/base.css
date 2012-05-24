@@ -286,6 +286,18 @@ button { float: left; display: inline; font-family: Helvetica, Arial, sans-serif
 .checkbox_label { margin: 0 0 13px 0; padding-left: 18px; float: none; display: block; clear: none; }
 
 
+
+label { display: block; float: none; }
+
+input[type="text"],
+input[type="password"],
+input[type="select"],
+input[type="search"],
+input[type="password"],
+textarea { display: block; width: 50%;} 
+
+
+
 /* Form widths */
 
 .width1 { width: 115px; }
@@ -359,7 +371,17 @@ h5	{ font-size: 13px; line-height: 20px; }
 h6	{ font-size: 13px; line-height: 20px; }
 
 	
+	.logo { text-align: center; }
 
+label { width: 80%; margin: 0 10%; }
+	
+input[type="text"],
+input[type="password"],
+input[type="select"],
+input[type="search"],
+input[type="password"],
+textarea { display: block; width: 80%; margin: 0 10%;} 
+	
 	
 	/* footer */
 	footer li { display: block; }
