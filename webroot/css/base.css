@@ -19,6 +19,7 @@
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
+.content * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 /* Type 
 ================================================== */
@@ -36,7 +37,7 @@ abbr, code, kbd,
 samp, small, var	{ line-height: 15px; }
 ul, ol, dl, dialog	{ font-family: Helvetica, sans-serif;  font-size: 13px; line-height: 20px; position: relative; }
 li ul, li ol, ul ul, ol ol	{ font-family: Helvetica, sans-serif; margin-top: 0; margin-bottom: 0;}
-.small { color: #999; font-size: 12px; }
+.sm { color: #999; font-size: 12px; }
 
 form, legend, label	{ font-size: 13px; line-height: 18px; }
 legend	{ position: relative; display: block; }
@@ -147,28 +148,21 @@ figure { overflow: hidden; margin: 0; padding: 0; }
 /* Parts
 ================================================== */	
 
-/* share */	
-.share { margin: 10px 0; overflow: hidden; }
-.share li { display: inline; width: 100px; }
-	.fb-like { width: 100px; }
+/* gallery */
+.planter.box { margin-bottom: 40px; }
+.planter.stack {  }
 
-/* gallery horizontal */	
-.sm { text-align: center; }	
-	.sm figure { height: 220px; overflow: hidden; }
+.cell { background: #fff; padding: 15px; -moz-box-shadow: 0 2px 2px rgba(0,0,0,0.1); -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.1); box-shadow: 0 2px 2px rgba(0,0,0,0.1); border: 1px solid #efefef; }
+	.cell figure img { display: block; max-width: 100%; height: 100px; background: #ccc; margin-bottom: 15px; }
 
-/* wide */	
-.wide { background: #333; color: #fff; text-align: center; }
-	.banner { background: url(http://www.imgbase.info/images/safe-wallpapers/digital_art/3d_space_scene/12496_3d_space_scene.jpg) center 0 no-repeat #333; height: 300px; }
-	.feature-wrp { padding: 0; color: #fff; background: url(../img/bg.jpg) #333; overflow: hidden; }
-	.feature article { padding-bottom: 25px; }
-	.feature img { float: left; }
-	.feature figure { margin-top: 40px;  overflow: hidden; float: left;
-	-moz-box-shadow: 0 4px 20px rgba(0,0,0,0.6); -webkit-box-shadow: 0 4px 20px rgba(0,0,0,0.6); box-shadow: 0 4px 20px rgba(0,0,0,0.6);  }
+/* list */
+.stack li { padding: 20px; border-bottom: 1px solid #ccc; }
 
-/* curator */
-.curator { overflow: hidden; background-color: #fff; margin-top: 40px; }
-.box { padding: 10px; }
-.round { -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;-moz-box-shadow: 0 2px 2px rgba(0,0,0,0.3); -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.3); box-shadow: 0 2px 2px rgba(0,0,0,0.3);  }
+.scale { display: block; width: 100%; height: 10px; background: #DFEAF4; margin-top: 10px;
+	-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; 
+	 -moz-box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1); -webkit-box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1); box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1);}
+	 	.progress { display: block; height: 10px; width: 50%; background: #316698; 
+	 	-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
 
 /* slideshow */
 .slides {  }
