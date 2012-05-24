@@ -17,4 +17,15 @@ class AppController extends Controller {
 		$this->set('auth_user', $this->Auth->User());
 
 	}
+
+	public function stringToSlug($str = false) {
+		if($str) {
+			// turn into slug
+			$str = Inflector::slug($str);
+			// to lowercase
+			$str = strtolower($str);
+			return $str;
+		}
+		return false;
+	}
 }

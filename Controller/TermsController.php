@@ -75,6 +75,10 @@ class TermsController extends AppController {
 	public function make_a_clipping() {
 		if ($this->request->is('post')) {
 			$this->Term->create();
+
+			// TODO: need to make sure slug is unique
+			$this->request->data['Term']['slug'] = $this->stringToSlug($this->request->data['Term']['name']);
+
 			if ($this->Term->save($this->request->data)) {
 				$this->Session->setFlash(__('The term has been saved'));
 				$this->redirect(array('action' => 'index'));
