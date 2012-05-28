@@ -11,4 +11,26 @@
 	echo $this->Form->end(__('Save Seed'));
 	?>
 	</article>
+
+	<ul class="clippings">
+		<?php foreach($terms as $term) : ?>
+		<li><a href="#"><?php echo $term['Term']['name']; ?> <span class="count">12</span></a></li>
+		<?php endforeach; ?>
+	</ul>
+
+</section>
+
+<section class="single clearfix">
+	<article>
+	<h1><?php echo __('Add Term Relationships'); ?></h1>
+	<?php echo $this->Form->create('TermRelationship');?>
+		<fieldset>
+			<legend><?php echo __('Add a Term Relationship'); ?></legend>
+		<?php
+			echo $this->Form->input('object_id');
+			echo $this->Form->input('term_taxonomy_id');
+		?>
+		</fieldset>
+	<?php echo $this->Form->end(__('Submit'));?>
+	</article>
 </section>

@@ -4,9 +4,9 @@
 			<h3><?php echo __('Clippings'); ?></h3>
 			<fieldset>
 				<ul class="clippings">
-					<li><a href="#">WordPress <span class="count">12</span></a></li>
-					<li><a href="#">Responsive <span class="count">34</span></a></li>
-					<li><a href="#">HTML 5 <span class="count">28</span></a></li>
+					<?php foreach($terms as $term) : ?>
+					<li><a href="#"><?php echo $term['Term']['name']; ?> <span class="count">12</span></a></li>
+					<?php endforeach; ?>
 				</ul>
 			</fieldset>
 			

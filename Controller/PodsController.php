@@ -8,16 +8,10 @@ class PodsController extends AppController {
 	}
 
 	public function index() {
-/*
-		$this->Pod->recursive = 0;
-		$this->Pod->order = array('Pod.sequence' => 'ASC');
-		$this->set('pods', $this->paginate());
-*/
 		$pods = $this->Pod->find('all', array(
 			'order' => array('Pod.name ASC')
 		));
 		$this->set('pods', $pods);
-
 	}
 
 	public function view($id = null) {

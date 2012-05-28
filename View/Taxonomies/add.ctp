@@ -6,7 +6,9 @@
 		echo $this->Form->input('term_id', array(
 			'options' => $terms
 		));
-		echo $this->Form->input('name');
+		echo $this->Form->input('taxonomy_id', array(
+			'options' => $taxonomies
+		));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

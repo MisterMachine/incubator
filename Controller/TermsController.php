@@ -85,6 +85,9 @@ class TermsController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The term could not be saved. Please, try again.'));
 			}
+		} else {
+			$this->Term->recursive = 0;
+			$this->set('terms', $this->paginate());
 		}
 	}
 

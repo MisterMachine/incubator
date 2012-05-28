@@ -1,7 +1,7 @@
 <?php
 class SeedsController extends AppController {
 
-	var $uses = array('Seed');
+	var $uses = array('Seed', 'Term');
 
 	public $paginate = array(
 		'limit' => 25,
@@ -58,6 +58,12 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
+			$terms = $this->Term->find('all', array(
+				'fields' => array('Term.id', 'Term.name'),
+				'order' => array('Term.name ASC'),
+				'recursive' => 0
+			));
+			$this->set('terms', $terms);
 			$this->request->data = $this->Seed->read(null, $id);
 		}
 	}
