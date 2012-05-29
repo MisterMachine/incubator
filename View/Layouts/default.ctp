@@ -96,7 +96,7 @@
 
 	<?php //debug($this->Session, true); ?>
 	<?php //debug($user, true); ?>
-	<?php //echo $this->element('sql_dump'); ?>
+	<?php echo $this->element('sql_dump'); ?>
 
 </body>
 </html>

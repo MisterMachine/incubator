@@ -23,14 +23,13 @@
 <section class="single clearfix">
 	<article>
 	<h1><?php echo __('Add Term Relationships'); ?></h1>
-	<?php echo $this->Form->create('TermRelationship');?>
+	<?php echo $this->Form->create('TermRelationship', array('action' => 'add'));?>
 		<fieldset>
-			<legend><?php echo __('Add a Term Relationship'); ?></legend>
-		<?php
-			echo $this->Form->input('object_id');
-			echo $this->Form->input('term_taxonomy_id');
-		?>
+			<?php echo $this->Form->input('object_id', array('options' => $objects)); ?>
 		</fieldset>
+		<fieldset>
+			<?php echo $this->Form->input('term_taxonomy_id', array('options' => $taxonomies));?>
+		</fieldset>
+		</article>
 	<?php echo $this->Form->end(__('Submit'));?>
-	</article>
 </section>

@@ -1,7 +1,7 @@
 <?php
 class SeedsController extends AppController {
 
-	var $uses = array('Seed', 'Term');
+	var $uses = array('Seed', 'Term', 'Taxonomy', 'TermRelationship');
 
 	public $paginate = array(
 		'limit' => 25,
@@ -16,7 +16,9 @@ class SeedsController extends AppController {
 
 	public function index() {
 		$this->Seed->recursive = 0;
-		$this->set('seeds', $this->paginate());
+		$seeds = $this->paginate();
+		//debug($seeds);
+		$this->set('seeds', $seeds);
 	}
 
 	public function view($id = null) {
@@ -63,7 +65,18 @@ class SeedsController extends AppController {
 				'order' => array('Term.name ASC'),
 				'recursive' => 0
 			));
+			$objects = $this->Seed->find('list', array(
+				'fields' => array('Seed.id', 'Seed.name'),
+				'order' => array('Seed.name ASC'),
+				'recursive' => 0
+			));
+			$taxonomies = $this->Taxonomy->find('list', array(
+				'fields' => array('Taxonomy.id', 'Taxonomy.term_id'),
+				'recursive' => 0
+			));
+			$this->set('objects', $objects);
 			$this->set('terms', $terms);
+			$this->set('taxonomies', $taxonomies);
 			$this->request->data = $this->Seed->read(null, $id);
 		}
 	}
