@@ -29,12 +29,16 @@ class TermsController extends AppController {
 
 	public function add() {
 		if ($this->request->is('post')) {
-			$this->Term->create();
-			if ($this->Term->save($this->request->data)) {
-				$this->Session->setFlash(__('The term has been saved'));
-				$this->redirect(array('action' => 'index'));
+
+			if ($this->Term->isUnique('name', $this->request->data['Term']['name'])) {
+				if ($this->Term->save($this->request->data)) {
+					$this->Session->setFlash(__('The term has been saved'));
+					$this->redirect(array('action' => 'index'));
+				} else {
+					$this->Session->setFlash(__('The term could not be saved. Please, try again.'));
+				}
 			} else {
-				$this->Session->setFlash(__('The term could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The term already exists.'));
 			}
 		}
 	}
@@ -45,11 +49,17 @@ class TermsController extends AppController {
 			throw new NotFoundException(__('Invalid term'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->Term->save($this->request->data)) {
-				$this->Session->setFlash(__('The term has been saved'));
-				$this->redirect(array('action' => 'index'));
+			if ($this->Term->isUnique('name', $this->request->data['Term']['name'], $id)) {
+				if ($this->Term->save($this->request->data)) {
+					$this->Session->setFlash(__('The term has been saved'));
+					$this->redirect(array('action' => 'index'));
+				} else {
+					$this->Session->setFlash(__('The term could not be saved. Please, try again.'));
+					$this->request->data = $this->Term->read(null, $id);
+				}
 			} else {
-				$this->Session->setFlash(__('The term could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The term already exists.'));
+				$this->request->data = $this->Term->read(null, $id);
 			}
 		} else {
 			$this->request->data = $this->Term->read(null, $id);
