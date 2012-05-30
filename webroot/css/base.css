@@ -107,7 +107,7 @@ header { height: 100px; }
 
 nav { display: block;  }
 	nav ul { overflow: hidden; margin: 0 auto; text-align: center; }
-		nav li { display: inline; float: left; text-align: center; height: 100px; width: 25%; }
+		nav li { display: inline; float: left; text-align: center; height: 100px; }
 		nav a { float: left;  font-family: "museo-sans",sans-serif; text-transform: uppercase; padding: 40px 16px 25px 16px; color: #333; text-decoration: none; font-weight: bold; }
 			nav .current-menu-item { background: url(../img/nav-active.png) 0 bottom transparent repeat-x; }
 
@@ -189,6 +189,9 @@ figure { overflow: hidden; margin: 0; padding: 0; }
 
 .top { padding-top: 20px; }
 .bottom-30 { padding-bottom: 30px; }
+.vertical-10 { padding: 15px 20px; }
+
+.single { padding-bottom: 30px }
 
 /* Footer
 ================================================== */	
