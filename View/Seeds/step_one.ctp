@@ -1,6 +1,6 @@
 <section class="container_12">
-	<article class="step-one grid_12">
-		<h3><?php echo __('Step One: Fill in the blanks'); ?></h3>
+	<article class="top grid_12">
+		<h3 class="bottom-30"><?php echo __('Step One: Fill in the blanks'); ?></h3>
 		<?php echo $this->Form->create('Seed', array('class' => 'madlib'));?>
 			<fieldset class="madline">
 				<div class="junction">
