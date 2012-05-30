@@ -59,9 +59,9 @@
 				<nav class="grid_8">
 					<!-- main menu -->
 					<ul>
-						<li><?php echo $this->Html->link(__('Inventory'), array('controller' => 'seeds', 'action' => 'index')); ?></li>
-						<li><?php echo $this->Html->link(__('Plant a Seed'), array('controller' => 'seeds', 'action' => 'step_one')); ?></li>
-						<li><?php echo $this->Html->link(__('Make a clipping'), array('controller' => 'terms', 'action' => 'make_a_clipping')); ?></li>
+						<li><?php echo $this->Html->link(__('Start a Seed'), array('controller' => 'seeds', 'action' => 'step_one')); ?></li>	
+						<li><?php echo $this->Html->link(__('Manage Clippings'), array('controller' => 'terms', 'action' => 'make_a_clipping')); ?></li>
+						<li><?php echo $this->Html->link(__('Explore'), array('controller' => 'seeds', 'action' => 'index')); ?></li>	
 					</ul>
 				</nav>
 			</div>

@@ -1,8 +1,7 @@
-<section class="single clearfix">
-	<h2><?php __('Seeds'); ?></h2>
+<section class="single top container_12 clearfix">
+	<h3 class="grid_12 bottom-30"><?php echo __('Seeds'); ?></h3>
 	
-	
-	<ul class="planter box container_12 clearfix">
+	<ul class="planter box  clearfix">
 		<?php foreach ($seeds as $seed): ?>
 		<li class="seed cell grid_4">
 			<figure><img src="" /></figure>
