@@ -1,6 +1,6 @@
 <section class="container_12">
-	<article class="grid_12">
-		<h3><?php echo __('Plant a Seed'); ?></h3>
+	<article class="step-one grid_12">
+		<h3><?php echo __('Step One: Fill in the blanks'); ?></h3>
 		<?php echo $this->Form->create('Seed', array('class' => 'madlib'));?>
 			<fieldset class="madline">
 				<div class="junction">
@@ -19,10 +19,10 @@
 					<span><?php echo __('for'); ?></span> 
 					
 					<span>
-					<?php echo $this->Form->input('cost', array('div' => false, 'label' => 'budget', 'class' => 'text', 'placeholder' => __('$5,000'))); ?><?php echo __('!'); ?>
+					<?php echo $this->Form->input('cost', array('div' => false, 'label' => 'budget', 'class' => 'text', 'placeholder' => __('$5,000'))); ?><?php echo __('<span class="punctum"></span>'); ?>
 					</span>
 				</div>
 			</fieldset>
-		<?php echo $this->Form->end(__('Save')); ?>
+		<?php echo $this->Form->end(__('Next')); ?>
 	</article>
 </section>
