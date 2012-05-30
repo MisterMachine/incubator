@@ -344,19 +344,22 @@ label.width4 select { width: 520px; }
 .inline button { margin-top: 35px; }
 
 .madlib { margin-bottom: 40px; }
+.madline { position: relative;  } 
 
-.madlib  label { font-family: Georgia, sans-serif; display: inline; font-size: 24px; line-height: 30px; }
+.madlib span { float: left; display: block; font-family: Georgia, sans-serif;  font-size: 24px; line-height: 30px; }
+	.madlib label { position: relative; display: block; bottom: -45px; text-align: center; }
+
 .madlib  input[type="text"],
 .madlib  input[type="password"],
 .madlib  input[type="select"],
 .madlib  input[type="search"],
-.madlib  input[type="password"] { font-family: Georgia, sans-serif; display: inline; font-size: 24px; line-height: 30px; background-color: transparent; margin-bottom: -1px; margin-top: 5px; padding: 8px 8px; border: 0; border-bottom: 1px solid #ccc; color: #4183C4;  width: 200px;
+.madlib  input[type="password"] { float: left; display: block; font-family: Georgia, sans-serif; font-size: 24px; line-height: 30px; background-color: transparent; margin-bottom: -1px; margin-top: 5px; padding: 8px 8px; border: 0; border-bottom: 1px solid #ccc; color: #4183C4;  width: 200px; margin-top: -30px; position: relative;
 	 -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; 
 	 -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
 	 margin-right: 5px; margin-left: 5px; 
-	background: -moz-linear-gradient(10% 100% 90deg,#e9e9e9, #F5F5F3, #F5F5F3 12%);
+	background: -moz-linear-gradient(10% 100% 90deg,#e9e9e9, #F5F5F3, #F5F5F3 12%); }
 
- }
+.junction { float: left; display: block; position: relative; }
 
 /* 360
 ================================================== */
