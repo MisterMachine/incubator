@@ -6,8 +6,8 @@
 		echo $this->Form->input('term_id', array(
 			'options' => $terms
 		));
-		echo $this->Form->input('taxonomy_id', array(
-			'options' => $taxonomies
+		echo $this->Form->input('name', array(
+			'options' => array('design' => 'Design', 'technology' => 'Technology')
 		));
 	?>
 	</fieldset>

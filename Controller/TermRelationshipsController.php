@@ -1,7 +1,7 @@
 <?php
 class TermRelationshipsController extends AppController {
 
-	var $uses = array('TermRelationship', 'Seed', 'Taxonomy');
+	var $uses = array('TermRelationship', 'Seed', 'Term');
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -35,12 +35,18 @@ class TermRelationshipsController extends AppController {
 				'order' => array('Seed.name ASC'),
 				'recursive' => 0
 			));
-			$taxonomies = $this->Taxonomy->find('list', array(
-				'fields' => array('Taxonomy.id', 'Taxonomy.term_id'),
+			$terms = $this->Term->find('list', array(
+				'fields' => array('Term.id', 'Term.name'),
 				'recursive' => 0
 			));
+
+
+			debug($terms, true);
+
+
+
 			$this->set('objects', $objects);
-			$this->set('taxonomies', $taxonomies);
+			$this->set('terms', $terms);
 		}
 	}
 

@@ -18,6 +18,8 @@ class TaxonomiesController extends AppController {
 		$taxonomies = $this->Taxonomy->find('all', array(
 			'order' => array('Taxonomy.name ASC')
 		));
+
+		debug($taxonomies, true);
 		$this->set('taxonomies', $taxonomies);
 	}
 
@@ -44,13 +46,7 @@ class TaxonomiesController extends AppController {
 				'order' => array('Term.name ASC'),
 				'recursive' => 0
 			));
-			$taxonomies = $this->Taxonomy->find('list', array(
-				'fields' => array('Taxonomy.id', 'Taxonomy.name'),
-				'order' => array('Taxonomy.name ASC'),
-				'recursive' => 0
-			));
 			$this->set('terms', $terms);
-			$this->set('taxonomies', $taxonomies);
 		}
 	}
 

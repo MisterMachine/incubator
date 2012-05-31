@@ -1,7 +1,7 @@
 <?php
 class TermsController extends AppController {
 
-	var $uses = array('Term');
+	var $uses = array('Term', 'Taxonomy');
 
 	public $paginate = array(
 		'limit' => 25,
