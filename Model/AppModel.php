@@ -2,7 +2,7 @@
 App::uses('Model', 'Model');
 class AppModel extends Model {
 
-	function isUnique($field, $value, $id = false) {
+	public function isUnique($field, $value, $id = false) {
 		$fields[$this->name.'.'.$field] = $value;
 		if (!empty($id)) {
 			$fields[$this->name.'.id'] = "IS NOT $id";

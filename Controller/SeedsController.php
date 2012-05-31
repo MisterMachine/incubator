@@ -105,7 +105,7 @@ class SeedsController extends AppController {
 				$this->request->data['Seed']['user_id'] = $user_id;
 				if ($this->Seed->save($this->request->data)) {
 					$this->Session->setFlash(__('The seed has been saved'));
-					$this->redirect(array('action' => 'index'));
+					$this->redirect(array('action' => 'step_two'));
 				} else {
 					$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 				}
@@ -113,6 +113,18 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be associated with a user. Please, try again.'));
 			}
 		}
+	}
+
+	public function step_two() {
+	}
+
+	public function step_three() {
+	}
+
+	public function step_four() {
+	}
+
+	public function step_five() {
 	}
 
 }
