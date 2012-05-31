@@ -103,9 +103,10 @@ class SeedsController extends AppController {
 			$user_id = $this->Auth->user('id');
 			if(isset($user_id)) {
 				$this->request->data['Seed']['user_id'] = $user_id;
-				if ($this->Seed->save($this->request->data)) {
+				$seed = $this->Seed->save($this->request->data);
+				if (!empty($seed)) {
 					$this->Session->setFlash(__('The seed has been saved'));
-					$this->redirect(array('action' => 'step_two'));
+					$this->redirect(array('action' => 'step_two', $seed['Seed']['id']));
 				} else {
 					$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 				}
@@ -115,16 +116,76 @@ class SeedsController extends AppController {
 		}
 	}
 
-	public function step_two() {
+	public function step_two($id = null) {
+		$this->Seed->id = $id;
+		if (!$this->Seed->exists()) {
+			throw new NotFoundException(__('Invalid seed'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->Seed->save($this->request->data)) {
+				$this->Session->setFlash(__('The seed has been saved'));
+				$seed = $this->Seed->read(null, $id);
+				$this->redirect(array('action' => 'step_three', $seed['Seed']['id']));
+			} else {
+				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
+			}
+		} else {
+			$this->set('seed', $this->Seed->read(null, $id));
+		}
 	}
 
-	public function step_three() {
+	public function step_three($id = null) {
+		$this->Seed->id = $id;
+		if (!$this->Seed->exists()) {
+			throw new NotFoundException(__('Invalid seed'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->Seed->save($this->request->data)) {
+				$this->Session->setFlash(__('The seed has been saved'));
+				$seed = $this->Seed->read(null, $id);
+				$this->redirect(array('action' => 'step_four', $seed['Seed']['id']));
+			} else {
+				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
+			}
+		} else {
+			$this->set('seed', $this->Seed->read(null, $id));
+		}
 	}
 
-	public function step_four() {
+	public function step_four($id = null) {
+		$this->Seed->id = $id;
+		if (!$this->Seed->exists()) {
+			throw new NotFoundException(__('Invalid seed'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->Seed->save($this->request->data)) {
+				$this->Session->setFlash(__('The seed has been saved'));
+				$seed = $this->Seed->read(null, $id);
+				$this->redirect(array('action' => 'step_five', $seed['Seed']['id']));
+			} else {
+				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
+			}
+		} else {
+			$this->set('seed', $this->Seed->read(null, $id));
+		}
 	}
 
-	public function step_five() {
+	public function step_five($id = null) {
+		$this->Seed->id = $id;
+		if (!$this->Seed->exists()) {
+			throw new NotFoundException(__('Invalid seed'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->Seed->save($this->request->data)) {
+				$this->Session->setFlash(__('The seed has been saved'));
+				$seed = $this->Seed->read(null, $id);
+				$this->redirect(array('action' => 'view', $seed['Seed']['id']));
+			} else {
+				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
+			}
+		} else {
+			$this->set('seed', $this->Seed->read(null, $id));
+		}
 	}
 
 }
