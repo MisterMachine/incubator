@@ -115,14 +115,14 @@ nav { display: block;  }
 /* Messaging 
 ================================================== */	
 
-.messages { background-color: #fff; padding: 30px 0; background-image: none;}
+.messages { background-color: #fff; padding: 5px 0; background-image: none;}
 
 	
 /* Section Rules
 ================================================== */
 
 .content { min-height: 500px; background: url(../img/bg1.jpg) center 0 ; }	
-.content section { background: url(../img/bg-cuff.png) center 0 no-repeat; }
+.content section {  }
 
 	.content section.gallery article { -moz-box-shadow: 0 2px 2px rgba(0,0,0,0.3); -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.3); box-shadow: 0 2px 2px rgba(0,0,0,0.3);  }
 		
@@ -194,7 +194,7 @@ figure { overflow: hidden; margin: 0; padding: 0; }
 
 .single { padding-bottom: 30px }
 
-.help { background-color: rgba(255,255,255,0.8); padding: 25px 50px; margin-bottom: 20px; -moz-box-shadow: 0 2px 2px rgba(0,0,0,0.1); -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.1); box-shadow: 0 2px 2px rgba(0,0,0,0.1); font-size: 13px; line-height: 20px; color: #999; } 
+.help { background-color: rgba(255,255,255,0.8); padding: 15px 25px; margin-bottom: 20px; font-size: 13px; line-height: 20px; color: #999; } 
 
 .progress ul { width: 100%; }
 .progress ul li { float: left; margin-right: 5px; }
@@ -353,7 +353,7 @@ label.width4 select { width: 520px; }
 
 .inline button { margin-top: 35px; }
 
-.madlib { margin-bottom: 40px; }
+.madlib { margin-top: 80px; margin-bottom: 80px; }
 .madline { position: relative;  } 
 
 .madlib span { float: left; display: block; font-family: Georgia, sans-serif;  font-size: 24px; line-height: 30px; }
@@ -381,8 +381,15 @@ label.width4 select { width: 520px; }
 
 .pitch { padding-top: 20px; }
 
-
-/* Errors
+.paginate { background: #DAE9F9; padding: 30px 15px; margin-top: 20px; position: relative; }
+	.paginate li { display: inline; }
+	
+	.status li {margin-right: 15px; }
+ 	.pages { width: 300px; margin: 0 auto; }
+	.pages li { width: 150px; text-align: center; float: left; font-weight: bold; }
+		.pages a { padding: 15px 45px; background: #fff; -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px; padding: }
+		
+/* Errorse
 ================================================== */
 .error-message { float: left; position: relative; display: block; top: -80px; text-align: center; font-size: 16px; line-height: 20px; color: #b84f66; display: inline; background: #f5f2c9; padding: 8px 15px; text-align: center; }
 
