@@ -115,7 +115,7 @@ nav { display: block;  }
 /* Messaging 
 ================================================== */	
 
-.messages { background-color: #fff; padding: 30px 0; background-image: none;}
+.messages { background-color: #fff; padding: 5px 0; background-image: none;}
 
 	
 /* Section Rules
@@ -353,7 +353,7 @@ label.width4 select { width: 520px; }
 
 .inline button { margin-top: 35px; }
 
-.madlib { margin-top: 40px; margin-bottom: 40px; }
+.madlib { margin-top: 80px; margin-bottom: 80px; }
 .madline { position: relative;  } 
 
 .madlib span { float: left; display: block; font-family: Georgia, sans-serif;  font-size: 24px; line-height: 30px; }
