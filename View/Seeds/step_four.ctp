@@ -25,6 +25,14 @@
 				</div>
 			</fieldset>
 
+			<fieldset>
+				<ul class="clippings">
+				<?php foreach($terms as $term) : ?>
+					<li><a href="#"><?php echo $term['Term']['name']; ?> <span class="count"></span></a></li>
+				<?php endforeach; ?>
+				</ul>
+			</fieldset>
+
 		<?php echo $this->Form->end(__('Next')); ?>
 	</article>
 </section>
