@@ -16,9 +16,7 @@ class SeedsController extends AppController {
 
 	public function index() {
 		$this->Seed->recursive = 0;
-		$seeds = $this->paginate();
-		//debug($seeds);
-		$this->set('seeds', $seeds);
+		$this->set('seeds', $this->paginate());
 	}
 
 	public function view($id = null) {
@@ -131,6 +129,7 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
+			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('design'));
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
 	}
@@ -149,6 +148,7 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
+			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('technology'));
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
 	}
@@ -167,6 +167,7 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
+			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('collaborator'));
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
 	}
@@ -185,6 +186,7 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
+			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('activity'));
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
 	}
