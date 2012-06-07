@@ -39,6 +39,17 @@
 					</span>
 				</div>
 			</fieldset>
-		<?php echo $this->Form->end(__('Next')); ?>
+		<?php // 	echo $this->Form->end(__('Next')); ?>
 	</article>
+	
+	<section class="paginate grid_12 clearfix">
+		<ul class="status grid_2">
+			<li><a href="#">Save</a></li>
+			<li><a href="#">Cancel</a></li>
+		</ul>
+		<ul class="pages center">
+			<li><a href="#">Back</a></li>
+			<li><a href="#">Next</a></li>
+		</ul>
+	</section>
 </section>
