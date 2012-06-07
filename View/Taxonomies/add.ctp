@@ -7,7 +7,7 @@
 			'options' => $terms
 		));
 		echo $this->Form->input('name', array(
-			'options' => array('design' => 'Design', 'technology' => 'Technology')
+			'options' => array($taxonomy_names)
 		));
 	?>
 	</fieldset>

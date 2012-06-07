@@ -28,7 +28,10 @@
 			<fieldset>
 				<ul class="clippings">
 				<?php foreach($terms as $term) : ?>
-					<li><a href="#"><?php echo $term['Term']['name']; ?> <span class="count"></span></a></li>
+					<li>
+						<?php echo $this->Form->checkbox('Terms.name', array('id' => '', 'value' => $term['Term']['name'], 'hiddenField' => false)); ?>
+						<a href="#"><?php echo $term['Term']['name']; ?> <span class="count"></span></a>
+					</li>
 				<?php endforeach; ?>
 				</ul>
 			</fieldset>

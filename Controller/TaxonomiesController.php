@@ -45,6 +45,7 @@ class TaxonomiesController extends AppController {
 				'recursive' => 0
 			));
 			$this->set('terms', $terms);
+			$this->set('taxonomy_names', Configure::read('taxonomy_names'));
 		}
 	}
 
