@@ -15,7 +15,7 @@ class TermsController extends AppController {
 	}
 
 	public function index() {
-		$this->Term->recursive = 0;
+		$this->Term->recursive = 1;
 		$this->set('terms', $this->paginate());
 	}
 
@@ -85,20 +85,21 @@ class TermsController extends AppController {
 	public function make_a_clipping() {
 		if ($this->request->is('post')) {
 			$this->Term->create();
-
 			// TODO: need to make sure slug is unique
 			$this->request->data['Term']['slug'] = $this->stringToSlug($this->request->data['Term']['name']);
-
-			if ($this->Term->save($this->request->data)) {
-				$this->Session->setFlash(__('The term has been saved'));
-				$this->redirect(array('action' => 'index'));
+			if ($this->Term->isUnique('name', $this->request->data['Term']['name'])) {
+				if ($this->Term->save($this->request->data)) {
+					$this->Session->setFlash(__('The term has been saved'));
+					$this->redirect(array('action' => 'index'));
+				} else {
+					$this->Session->setFlash(__('The term could not be saved. Please, try again.'));
+				}
 			} else {
-				$this->Session->setFlash(__('The term could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The term already exists.'));
 			}
-		} else {
-			$this->Term->recursive = 0;
-			$this->set('terms', $this->paginate());
 		}
+		$this->Term->recursive = 0;
+		$this->set('terms', $this->paginate());
 	}
 
 }

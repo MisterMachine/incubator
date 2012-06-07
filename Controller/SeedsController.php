@@ -16,9 +16,7 @@ class SeedsController extends AppController {
 
 	public function index() {
 		$this->Seed->recursive = 0;
-		$seeds = $this->paginate();
-		//debug($seeds);
-		$this->set('seeds', $seeds);
+		$this->set('seeds', $this->paginate());
 	}
 
 	public function view($id = null) {
@@ -70,10 +68,11 @@ class SeedsController extends AppController {
 				'order' => array('Seed.name ASC'),
 				'recursive' => 0
 			));
-			$taxonomies = $this->Taxonomy->find('list', array(
-				'fields' => array('Taxonomy.id', 'Taxonomy.term_id'),
-				'recursive' => 0
-			));
+
+			$taxonomies = $this->Taxonomy->getUniqueTaxonomies();
+			foreach($taxonomies as &$taxonomy) {
+				$taxonomy['Terms'] = $this->Taxonomy->getTaxonomyTerms($taxonomy['Taxonomy']['name']);
+			}
 			$this->set('objects', $objects);
 			$this->set('terms', $terms);
 			$this->set('taxonomies', $taxonomies);
@@ -130,6 +129,7 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
+			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('design'));
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
 	}
@@ -148,6 +148,7 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
+			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('technology'));
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
 	}
@@ -166,6 +167,7 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
+			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('collaborator'));
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
 	}
@@ -184,6 +186,7 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
+			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('activity'));
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
 	}
