@@ -18,8 +18,6 @@ class TaxonomiesController extends AppController {
 		$taxonomies = $this->Taxonomy->find('all', array(
 			'order' => array('Taxonomy.name ASC')
 		));
-
-		debug($taxonomies, true);
 		$this->set('taxonomies', $taxonomies);
 	}
 

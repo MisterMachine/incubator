@@ -70,10 +70,11 @@ class SeedsController extends AppController {
 				'order' => array('Seed.name ASC'),
 				'recursive' => 0
 			));
-			$taxonomies = $this->Taxonomy->find('list', array(
-				'fields' => array('Taxonomy.id', 'Taxonomy.term_id'),
-				'recursive' => 0
-			));
+
+			$taxonomies = $this->Taxonomy->getUniqueTaxonomies();
+			foreach($taxonomies as &$taxonomy) {
+				$taxonomy['Terms'] = $this->Taxonomy->getTaxonomyTerms($taxonomy['Taxonomy']['name']);
+			}
 			$this->set('objects', $objects);
 			$this->set('terms', $terms);
 			$this->set('taxonomies', $taxonomies);

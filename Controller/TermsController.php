@@ -15,7 +15,7 @@ class TermsController extends AppController {
 	}
 
 	public function index() {
-		$this->Term->recursive = 0;
+		$this->Term->recursive = 1;
 		$this->set('terms', $this->paginate());
 	}
 
