@@ -25,7 +25,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 ================================================== */
 
 h1, h2, h3, h4, h5, h6	{ position: relative; }
-h1	{ font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; font-size: 90px; line-height: 100px; font-weight: bold; margin-bottom: 20px; }
+h1	{ font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; font-size: 50px; line-height: 60px; font-weight: bold; margin-bottom: 20px; }
 h2	{ font-family: "adobe-text-pro", sans-serif; font-size: 36px; line-height: 42px; font-weight: 400; padding-bottom: 5px; font-style: normal;  }
 h3	{ font-family: "museo-sans",sans-serif;  font-size: 18px; line-height: 30px; font-weight: normal; font-weight: 700; }
 h4	{ font-family: "museo-sans",sans-serif; font-size: 15px; line-height: 25px; font-weight: normal; font-weight: 700; }
@@ -378,6 +378,8 @@ label.width4 select { width: 520px; }
 .horizontal li {  }
 
 .blocks li { margin-top: 20px; background: #fff; padding: 20px; -moz-box-shadow: 0 2px 2px rgba(0,0,0,0.1); -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.1); box-shadow: 0 2px 2px rgba(0,0,0,0.1);  }
+
+.pitch { padding-top: 20px; }
 
 
 /* Errors
