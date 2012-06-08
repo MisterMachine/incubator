@@ -26,14 +26,13 @@
 			</fieldset>
 
 			<fieldset>
-				<ul class="clippings">
-				<?php foreach($terms as $term) : ?>
-					<li>
-						<?php echo $this->Form->checkbox('Terms.name', array('id' => '', 'value' => $term['Term']['name'], 'hiddenField' => false)); ?>
-						<a href="#"><?php echo $term['Term']['name']; ?> <span class="count"></span></a>
-					</li>
-				<?php endforeach; ?>
-				</ul>
+				<?php echo $this->Form->input('Terms.id', array(
+					'div' => false, 
+					'label' => false, 
+					'type' => 'select', 
+					'multiple' => 'checkbox', 
+					'options' => $terms
+				)); ?>
 			</fieldset>
 
 		<?php echo $this->Form->end(__('Next')); ?>

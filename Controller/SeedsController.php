@@ -129,7 +129,8 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
-			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('design'));
+			$terms = $this->Taxonomy->getTaxonomyTerms('design', false);
+			$this->set('terms', $terms);
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
 	}

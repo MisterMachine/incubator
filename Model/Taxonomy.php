@@ -29,14 +29,23 @@ class Taxonomy extends AppModel {
 		));
 	}
 
-	public function getTaxonomyTerms( $taxonomy = false ) {
+	public function getTaxonomyTerms( $taxonomy = false, $verbose = true ) {
 		if(!empty($taxonomy)) {
-			return $this->find('all', array(
+			$terms = $this->find('all', array(
 				'recursive' => 1,
 				'fields' => array('Term.id', 'Term.name'),
 				'conditions' => array('Taxonomy.name' => $taxonomy),
 				'order' => array('Term.name ASC')
 			));
+			if(empty($verbose)) {
+				$terms_simple = array();
+				foreach($terms as $term) {
+					$terms_simple[$term['Term']['id']] = $term['Term']['name'];
+				}
+				return $terms_simple;
+			} else {
+				return $terms;
+			}
 		}
 		return false;
 	}
