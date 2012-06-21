@@ -121,7 +121,24 @@ class SeedsController extends AppController {
 			throw new NotFoundException(__('Invalid seed'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->Seed->save($this->request->data)) {
+
+			//debug($this->Seed, true);
+			//debug($this->request->data, true);
+
+
+/*
+			Try using saveMany() instead
+
+			if(isset($this->request->data['Seed']['TermRelationship'])) {
+				foreach($this->request->data['Seed']['TermRelationship'] as $k => $v) {
+					$this->TermRelationship->create();
+					$this->TermRelationship->save(array('TermRelationship' => array('TermRelationship.object_id' => $this->Seed->id, 'TermRelationship.term_taxonomy_id' => $v)), true, array('TermRelationship.object_id', 'TermRelationship.term_taxonomy_id'));
+					debug($this->TermRelationship->lastQuery);
+				}
+			}
+*/
+
+			if ($this->Seed->save($this->request->data, true, array('Seed.name', 'Seed.content', 'Seed.technology', 'Seed.cost'))) {
 				$this->Session->setFlash(__('The seed has been saved'));
 				$seed = $this->Seed->read(null, $id);
 				$this->redirect(array('action' => 'step_three', $seed['Seed']['id']));
@@ -129,7 +146,7 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
-			$terms = $this->Taxonomy->getTaxonomyTerms('design', false);
+			$terms = $this->Taxonomy->getTaxonomyTerms('design', true);
 			$this->set('terms', $terms);
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
@@ -141,7 +158,7 @@ class SeedsController extends AppController {
 			throw new NotFoundException(__('Invalid seed'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->Seed->save($this->request->data)) {
+			if ($this->Seed->save($this->request->data, true, array('Seed.name', 'Seed.content', 'Seed.technology', 'Seed.cost'))) {
 				$this->Session->setFlash(__('The seed has been saved'));
 				$seed = $this->Seed->read(null, $id);
 				$this->redirect(array('action' => 'step_four', $seed['Seed']['id']));
@@ -149,7 +166,7 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
-			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('technology'));
+			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('technology', false));
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
 	}

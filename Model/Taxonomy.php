@@ -33,14 +33,15 @@ class Taxonomy extends AppModel {
 		if(!empty($taxonomy)) {
 			$terms = $this->find('all', array(
 				'recursive' => 1,
-				'fields' => array('Term.id', 'Term.name'),
+				'fields' => array('Term.id', 'Term.name', 'Taxonomy.id'),
 				'conditions' => array('Taxonomy.name' => $taxonomy),
 				'order' => array('Term.name ASC')
 			));
 			if(empty($verbose)) {
 				$terms_simple = array();
 				foreach($terms as $term) {
-					$terms_simple[$term['Term']['id']] = $term['Term']['name'];
+					// We're matching the terms up with their taxonomy record id in order to make the term taxonomy relationships
+					$terms_simple[$term['Taxonomy']['id']] = $term['Term']['name'];
 				}
 				return $terms_simple;
 			} else {

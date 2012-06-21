@@ -39,7 +39,7 @@
 					</span>
 				</div>
 			</fieldset>
-		<?php // 	echo $this->Form->end(__('Next')); ?>
+		<?php echo $this->Form->end(__('Next')); ?>
 	</article>
 	
 	<section class="paginate grid_12 clearfix">
