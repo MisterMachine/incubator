@@ -18,7 +18,7 @@
 				</div>
 				<div class="junction">
 					<span><?php echo __('for'); ?></span> 
-					
+
 					<span>
 					<?php echo $this->Form->input('cost', array('div' => false, 'label' => 'budget', 'class' => 'text', 'placeholder' => __('$5,000'))); ?><?php echo __('<span class="punctum"></span>'); ?>
 					</span>

@@ -23,6 +23,19 @@ class TermRelationship extends AppModel {
 	);
 
 	public function beforeSave() {
+		//$this->isUniqueTermRelationship();
+	}
+
+	public function isUniqueTermRelationship() {
+
+		//debug($this->TermRelationship);
+
+/*
+		return $this->find('first', array(
+			'conditions' => array('TermRelationship.object_id' => $this->data['TermRelationships']['object_id'])
+		));
+*/
+		return true;
 	}
 
 }
