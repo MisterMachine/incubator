@@ -25,15 +25,20 @@
 				</div>
 			</fieldset>
 
+			<?php if(!empty($terms)) : ?>
 			<fieldset>
-				<?php echo $this->Form->input('Terms.id', array(
-					'div' => false, 
-					'label' => false, 
-					'type' => 'select', 
-					'multiple' => 'checkbox', 
-					'options' => $terms
-				)); ?>
+				<ul>
+				<?php foreach($terms as $term) : ?>
+					<li>
+						<input id="TermRelationship<?php echo $term['Taxonomy']['id']; ?>" type="checkbox" name="data[Seed][TermRelationship][]" value="<?php echo $term['Taxonomy']['id']; ?>" /> 
+						<label for="TermRelationship<?php echo $term['Taxonomy']['id']; ?>">
+						<?php echo __($term['Term']['name']); ?>
+						</label>
+					</li>
+				<?php endforeach; ?>
+				</ul>
 			</fieldset>
+			<?php endif; ?>
 
 		<?php echo $this->Form->end(__('Next')); ?>
 	</article>

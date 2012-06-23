@@ -123,14 +123,10 @@ class SeedsController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			// Save the Seed
 			if ($this->Seed->save($this->request->data, true, array('Seed.name', 'Seed.content', 'Seed.technology', 'Seed.cost'))) {
-				// Now save the TermRelationship
-				if(isset($this->request->data['Seed']['TermRelationship'])) {
-					foreach($this->request->data['Seed']['TermRelationship'] as $k => $v) {
-						$data = array('TermRelationship' => array('object_id' => $this->Seed->id, 'term_taxonomy_id' => $v));
-						$this->TermRelationship->create();
-						$this->TermRelationship->save($data);
-					}
-				}
+
+				// now save the term relationships
+				$this->saveTermRelationships();
+
 				$this->Session->setFlash(__('The seed has been saved'));
 				$seed = $this->Seed->read(null, $id);
 				$this->redirect(array('action' => 'step_three', $seed['Seed']['id']));
@@ -138,8 +134,7 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
-			$terms = $this->Taxonomy->getTaxonomyTerms('design', true);
-			$this->set('terms', $terms);
+			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('design', true));
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
 	}
@@ -151,6 +146,10 @@ class SeedsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Seed->save($this->request->data, true, array('Seed.name', 'Seed.content', 'Seed.technology', 'Seed.cost'))) {
+
+				// now save the term relationships
+				$this->saveTermRelationships();
+				
 				$this->Session->setFlash(__('The seed has been saved'));
 				$seed = $this->Seed->read(null, $id);
 				$this->redirect(array('action' => 'step_four', $seed['Seed']['id']));
@@ -158,7 +157,7 @@ class SeedsController extends AppController {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
 		} else {
-			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('technology', false));
+			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('technology', true));
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
 	}
@@ -199,6 +198,18 @@ class SeedsController extends AppController {
 			$this->set('terms', $this->Taxonomy->getTaxonomyTerms('activity'));
 			$this->set('seed', $this->Seed->read(null, $id));
 		}
+	}
+
+	private function saveTermRelationships() {
+		if(isset($this->request->data['Seed']['TermRelationship'])) {
+			foreach($this->request->data['Seed']['TermRelationship'] as $k => $v) {
+				$data = array('TermRelationship' => array('object_id' => $this->Seed->id, 'term_taxonomy_id' => $v));
+				$this->TermRelationship->create();
+				$this->TermRelationship->save($data);
+			}
+			return true;
+		}
+		return false;
 	}
 
 }

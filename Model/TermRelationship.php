@@ -23,18 +23,31 @@ class TermRelationship extends AppModel {
 	);
 
 	public function beforeSave() {
-		//$this->isUniqueTermRelationship();
+		if(!$this->isUniqueTermRelationship()) {
+			return false;
+		}
+		return true;
 	}
 
-	public function isUniqueTermRelationship() {
-
-		//debug($this->TermRelationship);
-
-/*
-		return $this->find('first', array(
-			'conditions' => array('TermRelationship.object_id' => $this->data['TermRelationships']['object_id'])
+	/**
+	 * isUniqueTermRelationship function.
+	 * Check to see if the term relationship exists already before saving.
+	 * @access private
+	 * @return void
+	 */
+	private function isUniqueTermRelationship() {
+		$termRelationship = $this->find('first', array(
+			'fields' => array('TermRelationship.id'),
+			'conditions' => array(
+				'TermRelationship.object_id' => $this->data['TermRelationship']['object_id'],
+				'TermRelationship.term_taxonomy_id' => $this->data['TermRelationship']['term_taxonomy_id']
+			)
 		));
-*/
+		// Term Relationship exists, so this is not a unique relationship
+		if(!empty($termRelationship)) {
+			return false;
+		}
+		// Yay, it's unique
 		return true;
 	}
 
