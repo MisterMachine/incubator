@@ -35,15 +35,17 @@
 			</div>
 		</fieldset>
 	</article>
+
 	<section class="paginate grid_12 clearfix">
 		<ul class="status grid_2">
-			<li><a href="#">Save</a></li>
-			<li><a href="#">Cancel</a></li>
+			<li><a href="#"><?php echo __('Save'); ?></a></li>
+			<li><a href="/seeds"><?php echo __('Cancel'); ?></a></li>
 		</ul>
 		<ul class="pages center">
-			<li><a href="#">Back</a></li>
-			<li><a href="#">Next</a></li>
+			<li><a href="/seeds"><?php echo __('Back'); ?></a></li>
+			<li><?php echo $this->Form->submit('Next', array('div' => false)); ?></li>
 		</ul>
 	</section>
 	<?php echo $this->Form->end(); ?>
+
 </section>
