@@ -8,12 +8,13 @@
 			<article class="inner-10">
 			<h3><?php echo $this->Html->link($seed['Seed']['name'], array('controller' => 'seeds', 'action' => 'view', $seed['Seed']['id'])); ?></h3>
 			<p class="sm"><?php echo $seed['Seed']['created']; ?></p>
-				
+				<?php if(!empty($seed['TermRelationship'])) : ?>
 				<ul class="clippings inline clearfix">
-					<li><a href="#">WordPress <span class="count">12</span></a></li>
-					<li><a href="#">Responsive <span class="count">34</span></a></li>
-					<li><a href="#">HTML 5 <span class="count">28</span></a></li>
+					<?php foreach($seed['TermRelationship'] as $termRelationship) : ?>
+					<li><a href="#"><?php echo $termRelationship['Taxonomy']['Term']['name']; ?> <span class="count">12</span></a></li>
+					<?php endforeach; ?>
 				</ul>
+				<?php endif; ?>
 			</article>	
 			<div class="scale">
 				<div class="progress"></div>

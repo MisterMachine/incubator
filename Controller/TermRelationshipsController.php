@@ -8,7 +8,9 @@ class TermRelationshipsController extends AppController {
 	}
 
 	public function index() {
-		$termRelationships = $this->TermRelationship->find('all');
+		$termRelationships = $this->TermRelationship->find('all', array(
+			'recursive' => 2
+		));
 		$this->set('termRelationships', $termRelationships);
 	}
 

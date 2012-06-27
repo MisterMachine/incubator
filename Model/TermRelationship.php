@@ -1,12 +1,9 @@
 <?php
 class TermRelationship extends AppModel {
 	public $name = 'TermRelationship';
-/*
 	public $belongsTo = array(
-		'object_id' => array('className' => 'Term'),
-		'term_taxonomy_id' => array('className' => 'Taxonomy')
+		'Taxonomy' => array('foreignKey' => 'term_taxonomy_id')
 	);
-*/
 	public $validate = array(
 		'object_id' => array(
 			'required' => array(

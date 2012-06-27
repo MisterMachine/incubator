@@ -5,12 +5,16 @@
 			<th><?php echo __('Id'); ?></th>
 			<th><?php echo __('Object Id'); ?></th>
 			<th><?php echo __('Term Taxonomy Id'); ?></th>
+			<th><?php echo __('Term Id'); ?></th>
+			<th><?php echo __('Term'); ?></th>
 		</tr>
 		<?php foreach ($termRelationships as $termRelationship): ?>
 		<tr>
 			<td><?php echo $termRelationship['TermRelationship']['id']; ?></td>
 			<td><?php echo $this->Html->link($termRelationship['TermRelationship']['object_id'], array('controller' => 'termrelationships', 'action' => 'view', $termRelationship['TermRelationship']['id'])); ?></td>
 			<td><?php echo $termRelationship['TermRelationship']['term_taxonomy_id']; ?></td>
+			<td><?php echo $termRelationship['Taxonomy']['term_id']; ?></td>
+			<td><?php echo $termRelationship['Taxonomy']['Term']['name']; ?></td>
 		</tr>
 		<?php endforeach; ?>
 	</table>

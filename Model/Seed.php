@@ -2,6 +2,7 @@
 class Seed extends AppModel {
 	public $name = 'Seed';
 	public $belongsTo = 'User';
+	public $hasMany = array('TermRelationship' => array('foreignKey' => 'object_id'));
 	public $validate = array(
 		'user_id' => array(
 			'required' => array(

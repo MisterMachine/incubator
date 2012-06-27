@@ -4,6 +4,7 @@ class SeedsController extends AppController {
 	var $uses = array('Seed', 'Term', 'Taxonomy', 'TermRelationship');
 
 	public $paginate = array(
+		'recursive' => 3,
 		'limit' => 25,
 		'order' => array(
 			'Seed.name' => 'ASC'
@@ -15,7 +16,6 @@ class SeedsController extends AppController {
 	}
 
 	public function index() {
-		$this->Seed->recursive = 0;
 		$this->set('seeds', $this->paginate());
 	}
 
