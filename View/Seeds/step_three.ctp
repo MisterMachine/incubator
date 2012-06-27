@@ -1,7 +1,7 @@
 <section class="container_12">
 	<article class="top grid_12">
 
-		<h3 class="bottom-10"><?php echo __('Step Three: Technology Environment'); ?></h3>
+		<h1 class="bottom-10"><strong>Step Three:</strong><br><?php echo __('Technology Environment'); ?></h1>
 		<?php echo $this->Form->create('Seed', array('class' => 'madlib'));?>
 			<fieldset class="madline">
 				<div class="junction">

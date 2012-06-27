@@ -1,6 +1,6 @@
 <section class="container_12">
 	
-	<section class="top progress grid_12 clearfix">
+	<!--section class="top progress grid_12 clearfix">
 		<ul class="clearfix">
 			<li class="current"><a href="#">1. The Big Idea</a></li>
 			<li><a href="#">2. Design Priorities</a></li>
@@ -9,11 +9,11 @@
 			<li><a href="#">Activity</a></li>
 			<li class="right"><a href="#">Preview</a></li>
 		</ul>
-	</section>
+	</section-->
 	<div class="clear"></div>
 	
 	<article class="top grid_12">
-		<h3 class="bottom-10"><?php echo __('Step One: Fill in the blanks'); ?></h3>
+		<h1 class="big-type bottom-10"><strong>Step 1:</strong><br><?php echo __('Fill in the blanks'); ?></h1>
 		
 		<p class="help">Dolor +1 sriracha stumptown, food truck dolore aliqua commodo keffiyeh vinyl mollit aesthetic wayfarers DIY. Gluten-free odd future consequat bespoke chambray, helvetica sustainable bushwick mumblecore dolor. Messenger bag pariatur velit, minim excepteur polaroid raw denim ea delectus. </p>
 		
