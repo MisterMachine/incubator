@@ -42,8 +42,14 @@ ul, ol, dl, dialog	{ font-family: Helvetica, sans-serif;  font-size: 13px; line-
 li ul, li ol, ul ul, ol ol	{ font-family: Helvetica, sans-serif; margin-top: 0; margin-bottom: 0;}
 .sm { color: #999; font-size: 12px; }
 
+p.intro {  font-family: Georgia,sans-serif; font-size: 32px; line-height: 42px; }
+p.major { font-size: 24px; line-height: 36px; }
+
 form, legend, label	{ font-size: 13px; line-height: 18px; }
 legend	{ position: relative; display: block; }
+
+bickquote p { font-family: Georgia,sans-serif; font-size: 24px; line-height: 32px; font-style: italic; }
+cite { font-size: 16px; line-height: 22px; }
 
 /* Links
 ================================================== */
