@@ -25,9 +25,10 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 ================================================== */
 
 h1, h2, h3, h4, h5, h6	{ position: relative; }
-h1	{ font-family: Georgia,sans-serif; font-size: 60px; line-height: 60px; margin-bottom: 20px; font-weight: normal; }
+h1	{ font-family: Georgia, serif; font-size: 60px; line-height: 60px; margin-bottom: 20px; font-weight: normal;
+text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85); }
 h2	{ font-family: "adobe-text-pro", sans-serif; font-size: 36px; line-height: 42px; font-weight: 400; padding-bottom: 5px; font-style: normal;  }
-h3	{ font-family: "museo-sans",sans-serif;  font-size: 18px; line-height: 30px; font-weight: normal; font-weight: 700; }
+h3	{ font-family: Georgia, serif; font-size: 22px; line-height: 30px; font-weight: normal; }
 h4	{ font-family: "museo-sans",sans-serif; font-size: 15px; line-height: 25px; font-weight: normal; font-weight: 700; }
 h5	{ font-size: 13px; line-height: 20px; }
 h6	{ font-size: 13px; line-height: 20px; }
@@ -43,7 +44,8 @@ li ul, li ol, ul ul, ol ol	{ font-family: Helvetica, sans-serif; margin-top: 0; 
 .sm { color: #999; font-size: 12px; }
 
 p.intro {  font-family: Georgia,sans-serif; font-size: 32px; line-height: 42px; }
-p.major { font-size: 24px; line-height: 36px; }
+p.major { font-size: 24px; line-height: 36px; margin: 5px 0; }
+	.major a { padding: 5px 10px; background-color: #fff; }
 
 form, legend, label	{ font-size: 13px; line-height: 18px; }
 legend	{ position: relative; display: block; }
@@ -51,10 +53,12 @@ legend	{ position: relative; display: block; }
 bickquote p { font-family: Georgia,sans-serif; font-size: 24px; line-height: 32px; font-style: italic; }
 cite { font-size: 16px; line-height: 22px; }
 
+.message { padding: 10px; }
+
 /* Links
 ================================================== */
 
-a { font-family: Helvetica, sans-serif; color: #316698; text-decoration: none; /* font-size: 13px; line-height: 20px; */ }
+a { color: #316698; text-decoration: none; /* font-size: 13px; line-height: 20px; */ }
 	a:hover { }
 
 .btn, input[type="submit"], input[type="reset"], input[type="button"] { 
@@ -66,19 +70,19 @@ padding: 12px 20px; text-align: center; color: #fff; font-size: 17px; font-weigh
 	.btn em { display: block; font-size: 12px; }
 
 .clippings { display: block; margin-top: 10px; }
-.clippings li { float: left; display: inline; margin-bottom: 5px; }
-.clippings a { float: left; display: block; background-color: #DFEAF4; color: #316698; margin-right: 10px;  padding: 5px 8px 5px 8px; font-size: 12px;
-	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; 
+.clippings li { float: left; display: inline; margin-bottom: 10px; }
+.clippings a { float: left; display: block; background-color: #DFEAF4; color: #316698; margin-right: 10px;  padding: 8px 5px 8px 15px; font-size: 12px;
+	-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; 
 	 -moz-box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1); -webkit-box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1); box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1);}
-	.clippings a .count { background-color: #fff !important; color: #316698; padding: 3px 4px; margin-left: 10px; text-align: center; font-size: 11px; line-height: 13px;
-	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }	
+	.clippings a .count { background-color: #fff !important; color: #316698; padding: 8px 10px; margin-left: 10px; text-align: center; font-size: 11px; line-height: 13px;
+	-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }	
 		.clippings a:hover .count { color: #fff; }
 		
 /* Global
 ================================================== */
 
 body { font-family: "museo-slab",serif; color: #333; background: #ccc; }
-	header { overflow: hidden; position: relative; background: #f5f5f3; }
+	header { overflow: hidden; position: relative; background: #fff; }
 	
 section { width: 100%;  }
 	section article { margin: 0 auto; }
@@ -102,7 +106,8 @@ section { width: 100%;  }
 /* Header
 ================================================== */	
 
-header { height: 50px; }
+header { height: 50px;
+	-moz-box-shadow: 0 1px 8px rgba(125,125,125,0.1); -webkit-box-shadow: 0 1px 8px rgba(125,125,125,0.1); box-shadow: 0 1px 8px rgba(125,125,125,0.1);  }
 
 .hgroup { padding-bottom: 10px; }
 
@@ -123,7 +128,7 @@ nav { display: block;  }
 /* Messaging 
 ================================================== */	
 
-.messages { background-color: #fff; padding: 5px 0; background-image: none;}
+.messages { background-color: #fff; padding: 0; background-image: none;}
 
 	
 /* Section Rules
@@ -167,14 +172,14 @@ figure { overflow: hidden; margin: 0; padding: 0; }
 .planter.stack {  }
 
 .cell { background: #fff; margin-bottom: 15px;
-	-moz-box-shadow: 0 2px 2px rgba(0,0,0,0.1); -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.1); box-shadow: 0 2px 2px rgba(0,0,0,0.1); border: 1px solid #efefef; }
+	-moz-box-shadow: 1px 1px 2px rgba(125,125,125,0.1); -webkit-box-shadow: 1px 1px 2px rgba(125,125,125,0.1); box-shadow: 1px 1px 2px rgba(125,125,125,0.1); border: 1px solid #efefef; }
 	.cell figure img { display: block; max-width: 100%; height: 100px; background: #ccc; }
 
 /* list */
 .stack li { padding: 20px; border-bottom: 1px solid #ccc; }
 
 .scale { display: block; width: 100%; height: 10px; background: #DFEAF4; margin-bottom: -1px;
-	 -moz-box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1); -webkit-box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1); box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1);}
+	 -moz-box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1); -webkit-box-shadow: inset 0 0 1px 1px rgba(150,0,0,0.1); box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1);}
 	 	.progress {  }
 
 /* slideshow */
@@ -199,6 +204,7 @@ figure { overflow: hidden; margin: 0; padding: 0; }
 .bottom-10 { padding-bottom: 20px; }
 .bottom-30 { padding-bottom: 30px; }
 .vertical-10 { padding: 15px 20px; }
+.vertical-15 { padding-top: 15px; }
 
 .single { padding-bottom: 30px }
 

@@ -1,4 +1,4 @@
-<section class="single clearfix">
+<section class="single vertical-10 clearfix">
 	<article>
 	<h1><?php echo __('Edit Seed'); ?></h1>
 	<?php echo $this->Form->create('Seed', array('action' => 'edit'));
