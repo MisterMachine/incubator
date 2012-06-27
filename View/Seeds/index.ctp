@@ -1,5 +1,5 @@
 <section class="single top container_12 clearfix">
-	<h3 class="grid_12 bottom-30"><?php echo __('Seeds'); ?></h3>
+	<h1 class="grid_12"><?php echo __('Seeds'); ?></h1>
 	
 	<ul class="planter box  clearfix">
 		<?php foreach ($seeds as $seed): ?>

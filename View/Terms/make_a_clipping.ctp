@@ -1,7 +1,7 @@
 <section class="container_12">
 	<article class="grid_12 top">
 		<?php echo $this->Form->create('Term', array('class' => 'tags'));?>
-			<h3><?php echo __('Clippings'); ?></h3>
+			<h1><?php echo __('Clippings'); ?></h1>
 			<fieldset>
 				<ul class="clippings">
 					<?php foreach($terms as $term) : ?>
