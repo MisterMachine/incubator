@@ -367,7 +367,7 @@ label.width4 select { width: 520px; }
 
 .inline button { margin-top: 35px; }
 
-.madlib { margin-top: 40px; margin-bottom: 80px; }
+.madlib { margin-bottom: 80px; }
 .madline { position: relative;  } 
 
 .madlib span { float: left; display: block; font-family: Georgia, sans-serif;  font-size: 24px; line-height: 30px; }
