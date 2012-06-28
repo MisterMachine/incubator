@@ -2,7 +2,7 @@
 class Taxonomy extends AppModel {
 	public $name = 'Taxonomy';
 	public $belongsTo = array('Term' => array('foreignKey' => 'term_id'));
-	//public $hasMany = array('TermRelationship' => array('foreignKey' => 'term_taxonomy_id'));
+	public $hasMany = array('TermRelationship' => array('foreignKey' => 'term_taxonomy_id'));
 	public $validate = array(
 		'term_id' => array(
 			'required' => array(

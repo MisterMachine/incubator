@@ -15,8 +15,15 @@ class TermsController extends AppController {
 	}
 
 	public function index() {
-		$this->Term->recursive = 1;
-		$this->set('terms', $this->paginate());
+		$terms = $this->paginate();
+		foreach($terms as &$term) {
+			if(!empty($term['Taxonomy'])) {
+				$term['TaxonomyList'] = $this->createTaxonomyList($term['Taxonomy']);
+			} else {
+				$term['TaxonomyList'] = null;
+			}
+		}
+		$this->set('terms', $terms);
 	}
 
 	public function view($id = null) {
@@ -24,7 +31,16 @@ class TermsController extends AppController {
 		if (!$this->Term->exists()) {
 			throw new NotFoundException(__('Invalid term'));
 		}
-		$this->set('term', $this->Term->read(null, $id));
+		//$term = $this->Term->read(null, $id);
+
+		$term = $this->Term->find('first', array(
+			'recursive' => 2,
+			'conditions' => array('Term.id' => $id)
+		));
+
+		debug($term);
+
+		$this->set('term', $term);
 	}
 
 	public function add() {

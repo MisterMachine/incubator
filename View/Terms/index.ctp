@@ -5,12 +5,14 @@
 			<th><?php echo __('Id'); ?></th>
 			<th><?php echo __('Name'); ?></th>
 			<th><?php echo __('Slug'); ?></th>
+			<th><?php echo __('Taxonomy'); ?></th>
 		</tr>
 		<?php foreach ($terms as $term): ?>
 		<tr>
 			<td><?php echo $term['Term']['id']; ?></td>
 			<td><?php echo $this->Html->link($term['Term']['name'], array('controller' => 'terms', 'action' => 'view', $term['Term']['id'])); ?></td>
 			<td><?php echo $term['Term']['slug']; ?></td>
+			<td><?php echo $term['TaxonomyList']; ?></td>
 		</tr>
 		<?php endforeach; ?>
 	</table>

@@ -28,4 +28,15 @@ class AppController extends Controller {
 		}
 		return false;
 	}
+
+	public function createTaxonomyList($taxonomies = false, $delimiter = ', ') {
+		if($taxonomies) {
+			$taxonomy_list = array();
+			foreach($taxonomies as $taxonomy) {
+				$taxonomy_list[] = $taxonomy['name'];
+			}
+			return implode($taxonomy_list,', ');
+		}
+		return false;
+	}
 }

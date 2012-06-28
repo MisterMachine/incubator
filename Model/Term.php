@@ -20,4 +20,10 @@ class Term extends AppModel {
 	public function beforeSave() {
 	}
 
+	public function getTermRelationshipCount($id = false) {
+		if($id) {
+		}
+		return false;
+	}
+
 }
