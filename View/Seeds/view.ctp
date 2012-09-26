@@ -6,7 +6,7 @@
 			<p class="edit"><?php echo $this->Html->link(__('Edit'), array('controller' => 'seeds', 'action' => 'edit',$seed['Seed']['id'])); ?></p>
 		</section>
 		
-		<section class="prototype vertical-10">
+		<section class="prototype cuffed vertical-10">
 			<h3>prototype</h3>
 			<p class="major"><a href="#"><?php echo $seed['Seed']['url']; ?></a></p>
 			<p class="major"><a href="#"><?php echo $seed['Seed']['repository']; ?></a></p>
@@ -25,7 +25,7 @@
 			</ul>
 		</section>
 		
-		<section class="colophon vertical-10">
+		<section class="colophon gry vertical-10">
 			<h3>colophon</h3>
 			<ul>
 			<li>
@@ -43,7 +43,7 @@
 			</ul>
 		</section>
 		
-		<section class="iterations vertical-10">
+		<section class="iterations gry vertical-10">
 			<h3>history</h3>
 			<p><?php echo $seed['Seed']['created']; ?></p>
 		</section>
