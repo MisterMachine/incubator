@@ -42,6 +42,18 @@ class SeedsController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The seed could not be associated with a user. Please, try again.'));
 			}
+		} else {
+			$terms = $this->Term->find('all', array(
+				'fields' => array('Term.id', 'Term.name'),
+				'order' => array('Term.name ASC'),
+				'recursive' => 0
+			));
+			$taxonomies = $this->Taxonomy->getUniqueTaxonomies();
+			foreach($taxonomies as &$taxonomy) {
+				$taxonomy['Terms'] = $this->Taxonomy->getTaxonomyTerms($taxonomy['Taxonomy']['name']);
+			}
+			$this->set('terms', $terms);
+			$this->set('taxonomies', $taxonomies);
 		}
 	}
 
