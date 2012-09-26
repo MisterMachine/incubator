@@ -16,19 +16,19 @@
 		<p class="help">Dolor +1 sriracha stumptown, food truck dolore aliqua commodo keffiyeh vinyl mollit aesthetic wayfarers DIY. Gluten-free odd future consequat bespoke chambray, helvetica sustainable bushwick mumblecore dolor. Messenger bag pariatur velit, minim excepteur polaroid raw denim ea delectus. </p>
 		<fieldset class="madline">
 			<div class="junction">
-				<span><?php echo __('I want to make a'); ?></span> 
+				<span class="note"><?php echo __('I want to make a'); ?></span> 
 				<span>
 				<?php echo $this->Form->input('name', array('div' => false, 'label' => 'idea', 'class' => 'text', 'placeholder' => __('Super dope App'))); ?>
 				</span>
 			</div>
 			<div class="junction">
-				<span><?php echo __('with'); ?></span> 
+				<span class="note"><?php echo __('with'); ?></span> 
 				<span>
 				<?php echo $this->Form->input('technology', array('div' => false, 'label' => 'technology', 'class' => 'text', 'placeholder' => __('WordPress'))); ?>
 				</span>
 			</div>
 			<div class="junction">
-				<span><?php echo __('for'); ?></span> 
+				<span class="note"><?php echo __('for'); ?></span> 
 				<span>
 				<?php echo $this->Form->input('cost', array('div' => false, 'label' => 'budget', 'class' => 'text', 'placeholder' => __('$5,000'))); ?><?php echo __('<span class="punctum"></span>'); ?>
 				</span>

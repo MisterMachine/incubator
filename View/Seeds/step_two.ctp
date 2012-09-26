@@ -5,19 +5,19 @@
 		<?php echo $this->Form->create('Seed', array('class' => 'madlib'));?>
 		<fieldset class="madline">
 			<div class="junction">
-				<span><?php echo __('I respect'); ?></span> 
+				<span class="note"><?php echo __('I respect'); ?></span> 
 				<span>
 				<?php echo $this->Form->input('name', array('div' => false, 'label' => 'brand', 'class' => 'text', 'placeholder' => __('Groupon'))); ?>
 				</span>
 			</div>
 			<div class="junction">
-				<span><?php echo __('and like'); ?></span> 
+				<span class="note"><?php echo __('and like'); ?></span> 
 				<span>
 				<?php echo $this->Form->input('technology', array('div' => false, 'label' => 'style', 'class' => 'text', 'placeholder' => __('Gothic'))); ?>
 				</span>
 			</div>
 			<div class="junction">
-				<span><?php echo __('more than'); ?></span> 
+				<span class="note"><?php echo __('more than'); ?></span> 
 
 				<span>
 				<?php echo $this->Form->input('cost', array('div' => false, 'label' => 'trend', 'class' => 'text', 'placeholder' => __('Twitter'))); ?><?php echo __('<span class="punctum"></span>'); ?>
