@@ -63,9 +63,12 @@ class SeedsController extends AppController {
 			throw new NotFoundException(__('Invalid seed'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+
+			debug($this->request->data);
+
 			if ($this->Seed->save($this->request->data)) {
 				$this->Session->setFlash(__('The seed has been saved'));
-				$this->redirect(array('action' => 'index'));
+				//$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The seed could not be saved. Please, try again.'));
 			}
@@ -80,16 +83,18 @@ class SeedsController extends AppController {
 				'order' => array('Seed.name ASC'),
 				'recursive' => 0
 			));
-
-			$taxonomies = $this->Taxonomy->getUniqueTaxonomies();
-			foreach($taxonomies as &$taxonomy) {
-				$taxonomy['Terms'] = $this->Taxonomy->getTaxonomyTerms($taxonomy['Taxonomy']['name']);
-			}
-			$this->set('objects', $objects);
-			$this->set('terms', $terms);
-			$this->set('taxonomies', $taxonomies);
 			$this->request->data = $this->Seed->read(null, $id);
 		}
+
+		// set up tags
+		$taxonomies = $this->Taxonomy->getUniqueTaxonomies();
+		foreach($taxonomies as &$taxonomy) {
+			$taxonomy['Terms'] = $this->Taxonomy->getTaxonomyTerms($taxonomy['Taxonomy']['name']);
+		}
+		$this->set('objects', $objects);
+		$this->set('terms', $terms);
+		$this->set('taxonomies', $taxonomies);
+
 	}
 
 	public function delete($id = null) {
