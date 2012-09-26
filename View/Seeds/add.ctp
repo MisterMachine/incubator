@@ -22,11 +22,21 @@
 				<?php echo $taxonomy['Taxonomy']['name']; ?>
 				<ul class="clippings">
 				<?php foreach($taxonomy['Terms'] as $term) : ?>
-					<li><a href="#"><?php echo $this->Form->checkbox(); ?><?php $term['Term']['name']; ?>&nbsp;<span class="count"></span></a></li>
+					<li><a href="#"><?php echo $this->Form->checkbox($term['Term']['name'], array('hiddenField' => false)); ?><?php echo $term['Term']['name']; ?>&nbsp;<span class="count"></span></a></li>
 				<?php endforeach; ?>
 				</ul>
 			</li>
 			<?php endforeach; ?>
 		</ul>
+	</article>
+</section>
+<section>
+	<article>
+		<input type="checkbox" id="check" /><label for="check">Toggle</label>
+		<div id="format">
+			<input type="checkbox" id="check1" /><label for="check1">B</label>
+			<input type="checkbox" id="check2" /><label for="check2">I</label>
+			<input type="checkbox" id="check3" /><label for="check3">U</label>
+		</div>
 	</article>
 </section>
