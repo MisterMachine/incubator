@@ -10,8 +10,8 @@
 			<?php endforeach; ?>
 			</ul>
 		</fieldset>
-
-		<section class="paginate grid_12 clearfix">
+		
+		<section class="paginate clearfix">
 			<ul class="status grid_2">
 				<li><a href="#"><?php echo __('Save'); ?></a></li>
 				<li><a href="/seeds"><?php echo __('Cancel'); ?></a></li>

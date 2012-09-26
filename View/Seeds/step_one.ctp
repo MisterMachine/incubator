@@ -11,7 +11,8 @@
 	</section-->
 	<div class="clear"></div>
 	<?php echo $this->Form->create('Seed', array('class' => 'madlib'));?>
-	<article class="top grid_12">
+	
+	<article class="top grid_12 clearfix">
 		<h1 class="big-type bottom-10"><strong>Step 1:</strong><br><?php echo __('Fill in the blanks'); ?></h1>
 		<p class="help">Dolor +1 sriracha stumptown, food truck dolore aliqua commodo keffiyeh vinyl mollit aesthetic wayfarers DIY. Gluten-free odd future consequat bespoke chambray, helvetica sustainable bushwick mumblecore dolor. Messenger bag pariatur velit, minim excepteur polaroid raw denim ea delectus. </p>
 		<fieldset class="madline">
@@ -35,8 +36,9 @@
 			</div>
 		</fieldset>
 	</article>
-
-	<section class="paginate grid_12 clearfix">
+	
+	<div class="clear"></div>
+	<section class="paginate clearfix">
 		<ul class="status grid_2">
 			<li><a href="#"><?php echo __('Save'); ?></a></li>
 			<li><a href="/seeds"><?php echo __('Cancel'); ?></a></li>

@@ -1,4 +1,4 @@
-<section class="single clearfix">
+<section class="top clearfix">
 <?php echo $this->Form->create('Term');?>
 	<fieldset>
 		<legend><?php echo __('Add Term'); ?></legend>
