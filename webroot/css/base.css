@@ -69,7 +69,7 @@ padding: 12px 20px; text-align: center; color: #fff; font-size: 17px; font-weigh
 	-moz-box-shadow: 0 0 2px 2px rgba(0,0,0,0.1); -webkit-box-shadow: 0 0 2px 2px rgba(0,0,0,0.1); box-shadow: 0 0 2px 2px rgba(0,0,0,0.1); }  
 	.btn em { display: block; font-size: 12px; }
 
-.clippings { display: block; margin-top: 10px; }
+.clippings { display: block; margin-top: 10px; overflow: hidden; }
 .clippings li { float: left; display: inline; margin-bottom: 10px; }
 .clippings a { float: left; display: block; background-color: #DFEAF4; color: #316698; margin-right: 10px;  padding: 6px 10px 8px 15px; font-size: 12px;
 	-moz-border-radius: 20px; -webkit-border-radius: 20px; border-radius: 20px; 
@@ -413,14 +413,16 @@ label.width4 select { width: 520px; }
 .paginate { background: #DAE9F9; padding: 30px 15px; margin-top: 20px; position: relative; }
 	.paginate li { display: inline; }
 	
-	.status li {margin-right: 15px; }
+	.status li {margin-right: 15px; display: none; }
  	.pages { width: 300px; margin: 0 auto; }
 	.pages li { width: 150px; text-align: center; float: left; font-weight: bold; }
-		.pages a { padding: 15px 45px; background: #fff; -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px; padding: }
+		.pages a, .pages input[type="submit"] { padding: 15px 45px !important; background: #fff; text-shadow: none; font-size: 13px; line-height: 20px; margin: 0; float: left; 
+		-moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;  color: #316698;
+		-moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px; }
 		
 /* Errors
 ================================================== */
-.madlib .error-message { float: left; position: relative; display: block; top: -80px; text-align: center; font-size: 16px; line-height: 20px; color: #b84f66; display: inline; background: #f5f2c9; padding: 8px 15px; text-align: center; }
+.madlib .error-message { float: left; position: relative; display: block; top: -80px; text-align: center; font-size: 16px; line-height: 20px; color: #b84f66; display: inline; background: #f5f2c9; padding: 8px 15px; text-align: center; width: auto; }
 
 .error-message {  background: #f5f2c9;  font-size: 16px; line-height: 20px; color: #b84f66; padding: 8px 15px; width: 50%; }
 
@@ -434,6 +436,8 @@ and (max-width : 480px) {
 	.align_center,
 	.align_right { text-align: left; }
 	
+	.clippings { width: 90%; padding: 0 5%; }
+	
 /* Type 
 ================================================== */
 
@@ -445,7 +449,6 @@ h4	{ font-family: "museo-sans",sans-serif; font-size: 16px; line-height: 20px; f
 h5	{ font-size: 13px; line-height: 20px; }
 h6	{ font-size: 13px; line-height: 20px; }
 
-	
 	.logo, .submit, h1, legend { text-align: center;  }
 	legend { width: 100%; display: block; }
 	
@@ -462,14 +465,14 @@ textarea { display: block; width: 90%; margin: 0 5%;}
 .inline button { margin-top: 10px; }	
 	.inline label { text-align: center; }
 	
+	.inline input[type="text"] { width: 100%; margin: 0; }
+	
 	/* footer */
 	footer li { display: block; }
 	footer li a { padding: 10px 0; }
 
 header { height: 100px; }
 nav li { font-size: 12px; }
-
-
 	
 }
 
