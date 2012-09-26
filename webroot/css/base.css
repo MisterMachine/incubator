@@ -134,7 +134,7 @@ nav { display: block;  }
 /* Section Rules
 ================================================== */
 
-.content { min-height: 500px; background: url(../img/bg1.jpg) center 0 ; }	
+.content { min-height: 500px; background: url(../img/bg1.jpg) center 0; padding-bottom: 30px; }	
 .content section {  }
 
 	.content section.gallery article { -moz-box-shadow: 0 2px 2px rgba(0,0,0,0.3); -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.3); box-shadow: 0 2px 2px rgba(0,0,0,0.3);  }
@@ -286,13 +286,15 @@ fieldset a { float: left; display: inline; }
 
 form { font-family: Helvetica, arial, sans-serif; }
 fieldset { display: block; margin: 10px 0 0 0; padding: 0;}
-legend { padding-bottom: 18px; background: #eee; padding: 10px; display: block; font-weight: bold; margin-bottom: 5px; }
+legend { font-family: Georgia, serif; font-size: 60px; line-height: 60px; margin-bottom: 20px; font-weight: normal;
+text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);}
 label { font-family: Helvetica, arial, sans-serif; padding-top: 5px; margin: 0; float: left; display: block; }
 label span {  }
 input[type="text"],
 input[type="password"],
 input[type="select"],
 input[type="search"],
+input[type="number"],
 input[type="password"] { font-size: 16px; line-height: 20px;
 display: block; margin-bottom: -1px; margin-top: 5px; padding: 8px 8px; border: 1px solid #ccc;
 	 -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; 
@@ -326,6 +328,7 @@ input[type="password"],
 input[type="select"],
 input[type="search"],
 input[type="password"],
+input[type="number"],
 textarea { display: block; width: 50%;} 
 
 /* Form widths */
@@ -345,19 +348,23 @@ label.width4 { width: 448px; display: block; }
 
 label.width1 input[type="text"], 
 label.width1 input[type="password"], 
-label.width1 input[type="select"], 
+label.width1 input[type="select"],
+label.width1 input[type="number"], 
 label.width1 input[type="search"] { width: 112px; }
 label.width2 input[type="text"], 
 label.width2 input[type="password"], 
 label.width2 input[type="select"], 
+label.width2 input[type="number"], 
 label.width2 input[type="search"] { width: 224px; }
 label.width3 input[type="text"], 
 label.width3 input[type="password"], 
 label.width3 input[type="select"], 
+label.width3 input[type="number"], 
 label.width3 input[type="search"] { width: 336px; }
 label.width4 input[type="text"], 
 label.width4 input[type="password"], 
 label.width4 input[type="select"], 
+label.width4 input[type="number"], 
 label.width4 input[type="search"] { width: 448px; }
 
 label.width1 select { width: 180px; }
@@ -365,7 +372,7 @@ label.width2 select { width: 360px; }
 label.width3 select { width: 540px; }
 label.width4 select { width: 520px; }
 
-button {  }
+.inline button { margin-top: 10px; }
 
 .madlib { margin-bottom: 80px; }
 .madline { position: relative;  } 
@@ -379,6 +386,7 @@ button {  }
 .madlib  input[type="password"],
 .madlib  input[type="select"],
 .madlib  input[type="search"],
+.madlib  input[type="number"],
 .madlib  input[type="password"] { display: block; font-family: Georgia, sans-serif; font-size: 24px; line-height: 30px; background-color: transparent; margin-bottom: -1px; margin-top: 5px; padding: 8px 8px; border: 0; border-bottom: 1px solid #ccc; color: #4183C4;  width: 200px; margin-top: -30px; position: relative;
 	 -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; 
 	 -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
@@ -412,8 +420,9 @@ button {  }
 		
 /* Errors
 ================================================== */
-.error-message { float: left; position: relative; display: block; top: -80px; text-align: center; font-size: 16px; line-height: 20px; color: #b84f66; display: inline; background: #f5f2c9; padding: 8px 15px; text-align: center; }
+.madlib .error-message { float: left; position: relative; display: block; top: -80px; text-align: center; font-size: 16px; line-height: 20px; color: #b84f66; display: inline; background: #f5f2c9; padding: 8px 15px; text-align: center; }
 
+.error-message {  background: #f5f2c9;  font-size: 16px; line-height: 20px; color: #b84f66; padding: 8px 15px; width: 50%; }
 
 /* 360
 ================================================== */
@@ -429,7 +438,7 @@ and (max-width : 480px) {
 ================================================== */
 
 h1, h2, h3, h4, h5, h6	{ position: relative; }
-h1	{ font-family: "adobe-text-pro", sans-serif; font-size: 30px; line-height: 35px; font-weight: bold;  }
+h1, legend	{ font-family: "adobe-text-pro", sans-serif; font-size: 30px; line-height: 35px; font-weight: bold;  }
 h2	{ font-family: "adobe-text-pro", sans-serif; font-size: 26px; line-height: 28px; font-weight: 400; padding-bottom: 5px; font-style: normal;  }
 h3	{ font-family: "museo-sans",sans-serif;  font-size: 18px; line-height: 25px; font-weight: normal; font-weight: 700; }
 h4	{ font-family: "museo-sans",sans-serif; font-size: 16px; line-height: 20px; font-weight: normal; font-weight: 700; }
@@ -437,18 +446,21 @@ h5	{ font-size: 13px; line-height: 20px; }
 h6	{ font-size: 13px; line-height: 20px; }
 
 	
-	.logo, .submit, h1 { text-align: center; }
-
-label { width: 90%; margin: 0 5%; }
+	.logo, .submit, h1, legend { text-align: center;  }
+	legend { width: 100%; display: block; }
+	
+label, .error-message, button { width: 90%; margin: 0 5%; }
 	
 input[type="text"],
 input[type="password"],
 input[type="select"],
 input[type="search"],
 input[type="password"],
+input[type="number"],
 textarea { display: block; width: 90%; margin: 0 5%;} 
 
-.inline button { margin-top: 0; }	
+.inline button { margin-top: 10px; }	
+	.inline label { text-align: center; }
 	
 	/* footer */
 	footer li { display: block; }

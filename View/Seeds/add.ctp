@@ -1,7 +1,7 @@
 <section class="container_12">
 <?php echo $this->Form->create('Seed');?>
-	<fieldset>
-		<legend><?php echo __('Add Seed'); ?></legend>
+	<fieldset class="grid_12 top">
+		<h1><?php echo __('Add Seed'); ?></h1>
 	<?php
 		echo $this->Form->input('name');
 		echo $this->Form->input('cost');
@@ -10,9 +10,10 @@
 		echo $this->Form->input('repository');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit'));?>
+	<fieldset class="grid_12">
+		<?php echo $this->Form->end(__('Submit'));?>
+	</fieldset>
 </section>
-
 <section class="single clearfix">
 	<article>
 		<h1><?php echo __('Tags'); ?></h1>
