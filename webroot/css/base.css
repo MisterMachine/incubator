@@ -71,12 +71,12 @@ padding: 12px 20px; text-align: center; color: #fff; font-size: 17px; font-weigh
 
 .clippings { display: block; margin-top: 10px; }
 .clippings li { float: left; display: inline; margin-bottom: 10px; }
-.clippings a { float: left; display: block; background-color: #DFEAF4; color: #316698; margin-right: 10px;  padding: 8px 5px 8px 15px; font-size: 12px;
-	-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; 
+.clippings a { float: left; display: block; background-color: #DFEAF4; color: #316698; margin-right: 10px;  padding: 6px 10px 8px 15px; font-size: 12px;
+	-moz-border-radius: 20px; -webkit-border-radius: 20px; border-radius: 20px; 
 	 -moz-box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1); -webkit-box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1); box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1);}
-	.clippings a .count { background-color: #fff !important; color: #316698; padding: 8px 10px; margin-left: 10px; text-align: center; font-size: 11px; line-height: 13px;
-	-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }	
-		.clippings a:hover .count { color: #fff; }
+	.clippings a .count { background-color: #fff !important; color: #316698; padding: 5px 8px; margin-left: 10px; text-align: center; font-size: 11px; line-height: 13px;
+	-moz-border-radius: 20px; -webkit-border-radius: 20px; border-radius: 20px; }	
+		.clippings a:hover .count { color: #ccc; }
 		
 /* Global
 ================================================== */
@@ -128,7 +128,7 @@ nav { display: block;  }
 /* Messaging 
 ================================================== */	
 
-.messages { background-color: #fff; padding: 0; background-image: none;}
+.messages { background-color: #DFEAF4; padding: 0; background-image: none;}
 
 	
 /* Section Rules
@@ -173,12 +173,12 @@ figure { overflow: hidden; margin: 0; padding: 0; }
 
 .cell { background: #fff; margin-bottom: 15px;
 	-moz-box-shadow: 1px 1px 2px rgba(125,125,125,0.1); -webkit-box-shadow: 1px 1px 2px rgba(125,125,125,0.1); box-shadow: 1px 1px 2px rgba(125,125,125,0.1); border: 1px solid #efefef; }
-	.cell figure img { display: block; max-width: 100%; height: 100px; background: #ccc; }
+	.cell figure img { display: none; max-width: 100%; height: 100px; background: #ccc; }
 
 /* list */
 .stack li { padding: 20px; border-bottom: 1px solid #ccc; }
 
-.scale { display: block; width: 100%; height: 10px; background: #DFEAF4; margin-bottom: -1px;
+.scale { display: none; width: 100%; height: 10px; background: #DFEAF4; margin-bottom: -1px;
 	 -moz-box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1); -webkit-box-shadow: inset 0 0 1px 1px rgba(150,0,0,0.1); box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1);}
 	 	.progress {  }
 
@@ -203,7 +203,7 @@ figure { overflow: hidden; margin: 0; padding: 0; }
 .top { padding-top: 20px; }
 .bottom-10 { padding-bottom: 20px; }
 .bottom-30 { padding-bottom: 30px; }
-.vertical-10 { padding: 15px 20px; }
+.vertical-10 { padding: 30px 0; }
 .vertical-15 { padding-top: 15px; }
 
 .single { padding-bottom: 30px }
@@ -365,9 +365,9 @@ label.width2 select { width: 360px; }
 label.width3 select { width: 540px; }
 label.width4 select { width: 520px; }
 
-.inline button { margin-top: 35px; }
+button {  }
 
-.madlib { margin-top: 40px; margin-bottom: 80px; }
+.madlib { margin-bottom: 80px; }
 .madline { position: relative;  } 
 
 .madlib span { float: left; display: block; font-family: Georgia, sans-serif;  font-size: 24px; line-height: 30px; }
@@ -387,7 +387,7 @@ label.width4 select { width: 520px; }
 .junction { float: left; display: block; position: relative; }
 	.punctum { float: left; margin-top: -20px; }
 
-.submit { text-align: center; }
+.submit { }
 .submit input { text-align: center;  }
 
 .horizontal li {  }
@@ -437,17 +437,18 @@ h5	{ font-size: 13px; line-height: 20px; }
 h6	{ font-size: 13px; line-height: 20px; }
 
 	
-	.logo { text-align: center; }
+	.logo, .submit, h1 { text-align: center; }
 
-label { width: 80%; margin: 0 10%; }
+label { width: 90%; margin: 0 5%; }
 	
 input[type="text"],
 input[type="password"],
 input[type="select"],
 input[type="search"],
 input[type="password"],
-textarea { display: block; width: 80%; margin: 0 10%;} 
-	
+textarea { display: block; width: 90%; margin: 0 5%;} 
+
+.inline button { margin-top: 0; }	
 	
 	/* footer */
 	footer li { display: block; }

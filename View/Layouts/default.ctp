@@ -26,7 +26,7 @@
 	<!-- end open graph -->
 
 	<?php echo $this->Html->css(array('base', 'grid')); ?>
-	<?php echo $this->Html->script(array('http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', 'plugins', 'app', 'http://use.typekit.com/xxxx.js')); ?>
+	<?php echo $this->Html->script(array('http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', 'plugins', 'app', 'http://use.typekit.com/lgu4got.js')); ?>
 </head>
 
 <body>

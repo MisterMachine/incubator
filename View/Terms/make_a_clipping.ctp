@@ -11,7 +11,7 @@
 			</fieldset>
 			
 			<fieldset class="inline">
-				<label class="width2 first field-first"><?php echo __('Add a tag'); ?>
+				<label class="field-first"><?php echo __('Add a tag'); ?>
 					<?php echo $this->Form->input('name', array('div' => false, 'label' => false, 'class' => 'text')); ?>
 				</label>
 				<button><?php echo __('Add'); ?></button>
