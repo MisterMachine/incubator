@@ -4,7 +4,6 @@
 		<legend><?php echo __('Add Seed'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
-		echo $this->Form->input('technology');
 		echo $this->Form->input('cost');
 		echo $this->Form->input('content');
 		echo $this->Form->input('url');

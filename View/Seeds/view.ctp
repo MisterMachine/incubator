@@ -12,12 +12,6 @@
 			<p class="major"><a href="#"><?php echo $seed['Seed']['repository']; ?></a></p>
 		</section>
 		
-		<section class="technology vertical-10 clearfix"> 
-			<h3>technology</h3>
-			<ul class="fancytag vertical-15">
-				<li><?php echo $seed['Seed']['technology']; ?></li>
-			</ul>
-		</section>
 		<div class="clear"></div>
 		<section class="feedback vertical-10">
 			<h3>feedback</h3>

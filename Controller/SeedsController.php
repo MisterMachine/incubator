@@ -5,7 +5,7 @@ class SeedsController extends AppController {
 
 	public $paginate = array(
 		'recursive' => 3,
-		'limit' => 25,
+		'limit' => 100,
 		'order' => array(
 			'Seed.name' => 'ASC'
 		)
@@ -122,7 +122,7 @@ class SeedsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			// Save the Seed
-			if ($this->Seed->save($this->request->data, true, array('Seed.name', 'Seed.content', 'Seed.technology', 'Seed.cost'))) {
+			if ($this->Seed->save($this->request->data, true, array('Seed.name', 'Seed.content', 'Seed.cost'))) {
 
 				// now save the term relationships
 				$this->saveTermRelationships();
@@ -145,7 +145,7 @@ class SeedsController extends AppController {
 			throw new NotFoundException(__('Invalid seed'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->Seed->save($this->request->data, true, array('Seed.name', 'Seed.content', 'Seed.technology', 'Seed.cost'))) {
+			if ($this->Seed->save($this->request->data, true, array('Seed.name', 'Seed.content', 'Seed.cost'))) {
 
 				// now save the term relationships
 				$this->saveTermRelationships();

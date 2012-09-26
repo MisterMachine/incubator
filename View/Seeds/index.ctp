@@ -38,14 +38,12 @@
 		<tr>
 			<th><?php echo __('Id'); ?></th>
 			<th><?php echo __('Name'); ?></th>
-			<th><?php echo __('Technology'); ?></th>
 			<th><?php echo __('Created'); ?></th>
 		</tr>
 		<?php foreach ($seeds as $seed): ?>
 		<tr>
 			<td><?php echo $seed['Seed']['id']; ?></td>
 			<td><?php echo $this->Html->link($seed['Seed']['name'], array('controller' => 'seeds', 'action' => 'view', $seed['Seed']['id'])); ?></td>
-			<td><?php echo $seed['Seed']['technology']; ?></td>
 			<td><?php echo $seed['Seed']['created']; ?></td>
 		</tr>
 		<?php endforeach; ?>
