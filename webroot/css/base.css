@@ -374,10 +374,10 @@ label.width4 select { width: 520px; }
 
 .inline button { margin-top: 10px; }
 
-.madlib { margin-bottom: 80px; }
+.madlib { }
 .madline { position: relative;  } 
 
-.madlib span { float: left; display: block; font-family: Georgia, sans-serif;  font-size: 24px; line-height: 30px; }
+	.madlib span { float: left; display: block; font-family: Georgia, sans-serif;  font-size: 24px; line-height: 30px; }
 	.madline label { position: relative; display: block; bottom: -35px; text-align: center; padding-top: 0; }
 
 .junction { height: 60px; }
@@ -473,6 +473,20 @@ textarea { display: block; width: 90%; margin: 0 5%;}
 
 header { height: 100px; }
 nav li { font-size: 12px; }
+	
+.madline .note { display: none; }
+
+.madlib span { float: none; width: 98%; }
+
+.junction,
+.madlib  input[type="text"],
+.madlib  input[type="password"],
+.madlib  input[type="select"],
+.madlib  input[type="search"],
+.madlib  input[type="number"],
+.madlib  input[type="password"] { width: 100%; }
+
+.content { min-height: 0; padding: 0; }
 	
 }
 

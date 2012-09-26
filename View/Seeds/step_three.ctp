@@ -5,19 +5,19 @@
 		<?php echo $this->Form->create('Seed', array('class' => 'madlib'));?>
 		<fieldset class="madline">
 			<div class="junction">
-				<span><?php echo __('I want to use'); ?></span> 
+				<span class="note"><?php echo __('I want to use'); ?></span> 
 				<span>
 				<?php echo $this->Form->input('name', array('div' => false, 'label' => 'technology', 'class' => 'text', 'placeholder' => __('PHP'))); ?>
 				</span>
 			</div>
 			<div class="junction">
-				<span><?php echo __('and'); ?></span> 
+				<span class="note"><?php echo __('and'); ?></span> 
 				<span>
 				<?php echo $this->Form->input('technology', array('div' => false, 'label' => 'software', 'class' => 'text', 'placeholder' => __('WordPress'))); ?>
 				</span>
 			</div>
 			<div class="junction">
-				<span><?php echo __('but avoid'); ?></span> 
+				<span class="note"><?php echo __('but avoid'); ?></span> 
 				
 				<span>
 				<?php echo $this->Form->input('cost', array('div' => false, 'label' => 'tech headline', 'class' => 'text', 'placeholder' => __('Bill Gates sucks'))); ?><?php echo __('<span class="punctum"></span>'); ?>

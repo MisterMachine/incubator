@@ -5,19 +5,19 @@
 
 		<fieldset class="madline">
 			<div class="junction">
-				<span><?php echo __('I could really use someone who is a'); ?></span> 
+				<span class="note"><?php echo __('I could really use someone who is a'); ?></span> 
 				<span>
 				<?php echo $this->Form->input('name', array('div' => false, 'label' => 'characteristic', 'class' => 'text', 'placeholder' => __('Tech leader'))); ?>
 				</span>
 			</div>
 			<div class="junction">
-				<span><?php echo __('and specializes in'); ?></span> 
+				<span class="note"><?php echo __('and specializes in'); ?></span> 
 				<span>
 				<?php echo $this->Form->input('technology', array('div' => false, 'label' => 'technology', 'class' => 'text', 'placeholder' => __('Ruby'))); ?>
 				</span>
 			</div>
 			<div class="junction">
-				<span><?php echo __('but avoid someone who'); ?></span> 
+				<span class="note"><?php echo __('but avoid someone who'); ?></span> 
 				<span>
 				<?php echo $this->Form->input('cost', array('div' => false, 'label' => 'personality', 'class' => 'text', 'placeholder' => __('hyper'))); ?><?php echo __('<span class="punctum"></span>'); ?>
 				</span>
