@@ -41,8 +41,7 @@ var App = function(){
 		},
 
 		add_buttons: function(){
-			$( "#check" ).button();
-			$( "#format" ).buttonset();
+			$( '.checkbox' ).button();
 		}
 
 	};

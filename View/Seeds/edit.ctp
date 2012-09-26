@@ -18,7 +18,7 @@
 				<?php echo $taxonomy['Taxonomy']['name']; ?>
 				<ul class="clippings">
 				<?php foreach($taxonomy['Terms'] as $term) : ?>
-					<li><a href="#"><?php echo $this->Form->checkbox($term['Term']['name'], array('hiddenField' => false)); ?><?php echo $term['Term']['name']; ?>&nbsp;<span class="count"></span></a></li>
+					<li><a href="#"><?php echo $this->Form->checkbox($term['Term']['name'], array('class' => 'checkbox', 'hiddenField' => false)); ?><?php echo $term['Term']['name']; ?>&nbsp;<span class="count"></span></a></li>
 				<?php endforeach; ?>
 				</ul>
 			</li>
