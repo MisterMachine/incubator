@@ -285,7 +285,7 @@ footer { background: #333; color: #fff; height: 200px; }
 fieldset a { float: left; display: inline; }
 
 form { font-family: Helvetica, arial, sans-serif; }
-fieldset { display: block; margin: 10px 0 0 0; padding: 0;}
+fieldset { display: block; margin: 10px 0; padding: 0;}
 legend { font-family: Georgia, serif; font-size: 60px; line-height: 60px; margin-bottom: 20px; font-weight: normal;
 text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);}
 label { font-family: Helvetica, arial, sans-serif; padding-top: 5px; margin: 0; float: left; display: block; }
@@ -318,8 +318,6 @@ button { float: left; display: inline; font-family: Helvetica, Arial, sans-serif
 
 .checkbox { margin: 6px 0 0 1px; float: left; display: block; clear: left;}
 .checkbox_label { margin: 0 0 13px 0; padding-left: 18px; float: none; display: block; clear: none; }
-
-
 
 label { display: block; float: none; }
 
@@ -374,7 +372,7 @@ label.width4 select { width: 520px; }
 
 
 input:-moz-placeholder,
-input[type="text"]:-moz-placeholder, 
+.madlib input[type="text"]:-moz-placeholder, 
 textarea:-moz-placeholder,
 ::-webkit-input-placeholder { color:#4183C4; }
 
@@ -386,22 +384,22 @@ textarea:-moz-placeholder,
 	.madlib span { float: left; display: block; font-family: Georgia, sans-serif;  font-size: 24px; line-height: 30px; }
 	.madline label { position: relative; display: block; bottom: -35px; text-align: center; padding-top: 0; }
 		
-	.madlib  input[type="text"],
-	.madlib  input[type="password"],
-	.madlib  input[type="select"],
-	.madlib  input[type="search"],
-	.madlib  input[type="number"],
-	.madlib  input[type="password"] { display: block; font-family: Georgia, sans-serif; font-size: 24px; line-height: 30px; background-color: transparent; margin-bottom: -1px; margin-top: 5px; padding: 8px 8px; border: 0; border-bottom: 1px solid #ccc; width: 200px; margin-top: -30px; position: relative;
+	.madlib input[type="text"],
+	.madlib input[type="password"],
+	.madlib input[type="select"],
+	.madlib input[type="search"],
+	.madlib input[type="number"],
+	.madlib input[type="password"] { display: block; font-family: Georgia, sans-serif; font-size: 24px; line-height: 30px; background-color: transparent; margin-bottom: -1px; margin-top: 5px; padding: 8px 8px; border: 0; border-bottom: 1px solid #ccc; width: 200px; margin-top: -30px; position: relative;
 	 -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; 
 	 -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
 	 margin-right: 5px; margin-left: 5px; background: transparent; }
 	
-	.madlib  input[type="text"]:focus,
-	.madlib  input[type="password"]:focus,
-	.madlib  input[type="select"]:focus,
-	.madlib  input[type="search"]:focus,
-	.madlib  input[type="number"]:focus,
-	.madlib  input[type="password"]:focus { color:#4183C4; }
+	.madlib input[type="text"]:focus,
+	.madlib input[type="password"]:focus,
+	.madlib input[type="select"]:focus,
+	.madlib input[type="search"]:focus,
+	.madlib input[type="number"]:focus,
+	.madlib input[type="password"]:focus { color:#4183C4; }
 	
 .junction { float: left; display: block; position: relative; height: 60px; }
 	.punctum { float: left; margin-top: -20px; }
