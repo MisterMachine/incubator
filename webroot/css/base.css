@@ -472,7 +472,7 @@ textarea, .text label { display: block; width: 90%; margin: 0 5%;}
 .inline button { margin-top: 10px; }	
 	.inline label { text-align: center; }
 	
-	.inline input[type="text"] { width: 100%; margin: 0; }
+	.inline input[type="text"] { width: 90%; margin: 0 5%; }
 	
 	/* footer */
 	footer li { display: block; }
@@ -482,7 +482,8 @@ header { height: 100px; }
 nav li { font-size: 12px; }
 	
 .madline .note { display: none; }
-
+.madlib .error-message { top: 0; width: 100%; padding: 3px 0; margin: 1px 5px; font-size: 13px;
+    line-height: 15px; }
 .madlib span { float: none; width: 98%; }
 
 .junction,
