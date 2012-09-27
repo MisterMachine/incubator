@@ -50,7 +50,7 @@ p.major { font-size: 24px; line-height: 36px; margin: 5px 0; }
 form, legend, label	{ font-size: 13px; line-height: 18px; }
 legend	{ position: relative; display: block; }
 
-bickquote p { font-family: Georgia,sans-serif; font-size: 24px; line-height: 32px; font-style: italic; }
+bickquote p { font-family: Georgia,sans-serif; font-size: 24px; line-height: 32px; font-style: italic; padding-bottom: 10px; }
 cite { font-size: 16px; line-height: 22px; }
 
 .message { padding: 10px; }
@@ -208,7 +208,6 @@ figure { overflow: hidden; margin: 0; padding: 0; }
 
 .single { padding-bottom: 30px }
 
-	
 	.single section {  }
 	
 .help { background-color: rgba(255,255,255,0.8); padding: 15px 25px; margin-bottom: 20px; font-size: 13px; line-height: 20px; color: #999; } 
@@ -223,6 +222,7 @@ figure { overflow: hidden; margin: 0; padding: 0; }
 
 .progress ul li.current a { background: #dae9f9;  -moz-box-shadow: inset 0 2px 3px rgba(76,145,212,0.4); -webkit-box-shadow: inset 0 2px 3px rgba(76,145,212,0.4); box-shadow: inset 0 2px 3px rgba(76,145,212,0.4); }
 
+.step_1 .back { visibility: hidden; }
 
 /* Footer
 ================================================== */	
@@ -467,7 +467,7 @@ input[type="select"],
 input[type="search"],
 input[type="password"],
 input[type="number"],
-textarea, .text label { display: block; width: 90%; margin: 0 5%;} 
+textarea, .text label, .number label, .textarea label  { display: block; width: 90%; margin: 0 5%;} 
 
 .inline button { margin-top: 10px; }	
 	.inline label { text-align: center; }
@@ -495,8 +495,8 @@ nav li { font-size: 12px; }
 .madlib  input[type="password"] { width: 100%; }
 
 .content { min-height: 0; padding: 0; }
-	.single { padding: 20px 5%; }
-	
+	.single { padding: 20px 0; }
+	.single article { margin: 0 5%; }
 }
 
 
